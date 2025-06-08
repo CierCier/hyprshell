@@ -1,0 +1,130 @@
+{
+	"layer": "top",
+	"position": "top",
+	"margin": "5 10 0",
+    "fixed center": true,
+	"width": 600,
+	"modules-left": ["clock", "group/left-group", "mpris"],
+	"modules-center": [ "hyprland/workspaces"],
+	"modules-right": [ "group/right-group", "tray" ],
+
+	"hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "all-outputs": true,
+        "format-icons": {
+        "default": "󰫢",
+        "empty": "󰫣",
+        "active": "󰫢",
+		},
+		"persistent-workspaces" : {
+			"*": 3,
+		},
+	},
+
+	"clock": {
+		"format": "{:%H:%M}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ffcc66'><b><u>{}</u></b></span>"
+			}
+		}
+	},
+
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}",
+		//"format-charging": " {capacity}",
+        //"format-plugged": " {capacity}",
+        "format-charging": "󰋠 {capacity}",
+		"format-plugged": "󰋠 {capacity}",
+		"format-alt": "{time} {icon}",
+        //"format-icons": ["󱢠 󱢠 󱢠 ", "󱢠 󱢠 󰛞 ", "󱢠 󱢠 󰛞 ", "󱢠 󱢠 󰋑 ", "󱢠 󰛞 󰋑 ", "󱢠 󰛞 󰋑 ", "󱢠 󰋑 󰋑 ", "󰛞 󰋑 󰋑 ", "󰛞 󰋑 󰋑 ", "󰋑 󰋑 󰋑 "]
+		//"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		"format-icons": [" ", " ", " ", " ", " "]
+	},
+
+	"network": {
+		"interface": "wlan0",
+		"format-wifi": " {signalStrength}%" ,
+		"format-ethernet": "{ipaddr}/{cidr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "󰖪 ",
+        "on-click": "exec foot --app-id=process-monitor -e nmtui connect",
+        "tooltip-format":"Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({bandwidthDownBytes})</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>"	
+    },
+
+	"bluetooth": {
+		"format": "󰂯 {status}",
+		"format-disabled": " off",
+		"format-connected": " {num_connections}",
+		"tooltip-format": "{device_alias}",
+		"tooltip-format-connected": " {device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "exec blueberry"
+	},
+
+	"wireplumber": {
+		"format": " {volume}",
+		"on-click": "exec pavucontrol",
+		"tooltip": false,
+		"on-scroll-up": "",
+		"on-scroll-down": "",
+	},
+
+	"backlight": {
+		"format": " {percent}",
+		"tooltip": false,
+		"on-scroll-up": "",
+		"on-scroll-down": "",
+
+	},
+	"mpris": {
+		"interval": 1,
+		"format": "{status_icon}",
+		"tooltip-format": "{dynamic}",
+		"dynamic-order" : [
+			"title", "artist"
+		],
+		"status-icons": {
+			"playing": " Playing",
+			"paused": " Paused",
+		}
+
+	},
+
+	
+
+    "group/right-group": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 400,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "battery",
+            "bluetooth",
+            "network"
+        ]
+    },
+
+
+    "group/left-group": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 400,
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "wireplumber",
+			"backlight"
+        ]
+    },
+}

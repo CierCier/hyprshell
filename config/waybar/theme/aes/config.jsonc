@@ -1,0 +1,123 @@
+{
+  "name": "workspaces",
+  "margin-top": 5,
+  "margin-left": 20,
+  "margin-right": 20,
+  
+  "spacing": 0,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": [
+    "privacy",
+    "tray",
+    "battery",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "clock"
+  ],
+  "modules-center": ["mpris"],
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "disable-scroll": true,
+    "persistent-workspaces": {
+      "*": 4
+    },
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    }
+  },
+  "mpris": {
+    "interval": 1,
+    "format": "{player_icon}{status_icon}| {dynamic}",
+    "dynamic-order": ["title", "artist", "position", "length"],
+    "dynamic-len": 90,
+    "dynamic-importance-order": [
+      "title",
+      "position",
+      "length",
+      "artist",
+      "album"
+    ],
+    "player-icons": {
+      "chromium": " | ",
+      "spotify": "󰓇 | ",
+      "spotifyd": "󰓇 | "
+    },
+    "status-icons": {
+      "playing": " ",
+      "paused": " "
+    }
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "privacy": {
+    "icon-size": 16,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  },
+  "battery": {
+    "interval": 5,
+    "format": "{icon}    {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 1,
+    "on-click": "alacritty --class='process-monitor' -e btop"
+  },
+  "memory": {
+    "format": "  {used:0.1f}G",
+    "tooltip-format": "Usage: {used} GiB / {total} GiB",
+    "interval": 1,
+    "on-click": "alacritty --class='process-monitor' -e btop"
+  },
+  "bluetooth": {
+    "format": "󰂲",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "on-click": "blueberry"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  {volume}%",
+    "format-icons": [" ", " ", " "],
+    "on-click": "pavucontrol"
+  },
+  "clock": {
+    "locale": "en_US.utf-8",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "format": {
+        "months": "<span color='#F8F8F2'><b>{}</b></span>",
+        "days": "<span color='#F8F8F2'><b>{}</b></span>",
+        "weeks": "<span color='#A6E22E'><b>W{}</b></span>",
+        "weekdays": "<span color='#F4BF75'><b>{}</b></span>",
+        "today": "<span color='#F92672'><b><u>{}</u></b></span>"
+      }
+    }
+  }
+}

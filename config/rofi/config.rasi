@@ -1,0 +1,111 @@
+@theme "colors.rasi"
+
+* {
+  font: "JetBrainsMono Nerd Font Mono 12";
+}
+
+
+window {
+  padding: 1em;
+  border:       5px;
+  border-radius: 10px;
+}
+
+mainbox {
+  spacing: 0px;
+  children: [message,inputbar,listview];
+}
+
+message {
+    enabled:                     true;
+    margin:                      0px 100px;
+    padding:                     15px;
+    border:                      0px solid;
+    border-radius:               15px;
+    size:                        400em;
+}
+textbox {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    blink:                       true;
+    markup:                      true;
+    size:                        400em;
+    font: "JetBrainsMono Bold 15";
+
+}
+error-message {
+    padding:                     12px;
+    border:                      0px solid;
+    border-radius:               0px;
+}
+
+element {
+  background: transparent;
+  children: [ element-icon, element-text ];
+}
+element,element-text,element-icon, button {
+    cursor: pointer;
+}
+
+inputbar {
+  margin: 0px 10px;
+  spacing: 0.4em;
+  border:        5px;
+  children: [entry,overlay,case-indicator];
+}
+
+
+listview, message {
+  padding: 0.5em;
+  border:        5px;
+  border-radius: 10px;
+
+  columns: 1;
+  lines:   8;
+}
+listview {
+  border:       0px 5px 5px 5px;
+  border-radius: 10px 10px 10px 10px;
+  spacing: 10px;
+  scrollbar:    true;
+}
+
+
+element {
+    border:  5px;
+    border-radius: 5px;
+    padding: 5px;
+}
+element-text {
+    font: "JetBrainsMono Nerd Font Mono 10";
+}
+
+
+scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+mode-switcher {
+    border:  0px;
+    spacing: 0px;
+    expand: true;
+}
+button {
+    border:       0px 0px 5px ;
+    border-radius:    10px 10px 0 0;
+    horizontal-align: 0.5;
+}
+button selected.normal {
+    margin: 0px;
+    padding: 0px;
+    border:     5px 5px 5px 5px ;
+    border-radius:    10px 10px 10px 10px;
+}
+
+entry {
+    placeholder: "Search here";
+    border:        10px;
+    border-radius: 2px 2px 2px 2px;
+  }

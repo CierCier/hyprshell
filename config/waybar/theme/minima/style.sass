@@ -1,0 +1,209 @@
+@use "sass:color"
+@use "colors"
+
+$border-radius: 0.0rem
+$bar-padding: 0.0rem
+$module-margins: 0.0rem 0
+
+$turn_on_transition: cubic-bezier(0.5, 1, 0.5, 0) 200ms
+$turn_off_transition: cubic-bezier(0.5, 0, 1, 1) 200ms
+
+*
+  border-radius: 0
+  border: none
+
+  font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", "Noto Sans", "Twemoji", "monospace"
+  font-size: 0.85rem
+  font-weight: bolder
+  min-height: 0
+
+window#waybar
+  background: colors.$base
+  color: colors.$text
+
+#workspaces
+  margin: $bar-padding 0
+
+  & button
+    border: none
+    background: colors.$base
+    padding: 0.0 0.5rem
+
+    color: colors.$text
+    transition: $turn_off_transition
+
+  & button.empty
+    color: color.scale(colors.$text, $alpha: -80%)
+
+
+  & button.active
+    color: colors.$text
+    background: color.adjust(colors.$text, $lightness: -20% )
+    transition: $turn_on_transition
+
+  & button:hover
+    background-color: colors.$text
+    color: colors.$base
+    transition: $turn_on_transition
+
+  & button.persistent
+    border: none
+
+#tray
+  margin-right: $bar-padding
+  background-color: colors.$base
+  color: color.scale(colors.$text, $alpha: -80%)
+  border-radius: $border-radius
+  padding: $bar-padding 0.25rem
+
+  & *
+    margin-right: 0.35rem
+
+#mpris
+  background: colors.$base
+  padding: 0 0.5rem
+  border-radius: $border-radius
+  margin: $module-margins
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 200ms
+
+  &.playing
+        background: colors.$text
+        color: colors.$base
+
+#window
+  background: colors.$base
+  padding: 0 0.5rem
+  border-radius: $border-radius
+  margin: 0 0
+  font-weight: normal
+  font-style: normal
+
+#cpu,
+#memory,
+#temperature,
+#disk
+  background-color: colors.$base
+  margin: $module-margins
+  padding: 0 0.5rem
+  font-weight: bold
+
+#temperature
+  margin: $module-margins
+  margin-left: 0.25rem
+  border-top-left-radius: $border-radius
+  border-bottom-left-radius: $border-radius
+
+  &.critical
+    background: colors.$red
+
+#cpu
+  margin-right: 0
+  border-right: none
+
+  &.load
+    background: colors.$red
+
+#memory
+  margin-left: 0
+  border-left: none
+
+#disk
+  border-top-right-radius: $border-radius
+  border-bottom-right-radius: $border-radius
+  margin-right: 0.5rem
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#backlight,
+#idle_inhibitor,
+#custom-seperator
+  background: colors.$base
+  padding: 0 0.5rem
+  margin: $module-margins
+  border-radius: 0
+
+#network
+  border-top-left-radius: $border-radius
+  border-bottom-left-radius: $border-radius
+
+  &.disconnected
+    background: colors.$red
+
+#battery.charging
+  background: colors.$text
+  color: colors.$base
+
+#battery.full
+  background: rgb(100, 255, 160)
+  color: rgb(0, 0, 0)
+
+#battery.warning
+  background: colors.$yellow
+  color: colors.$white
+
+#battery.critical
+  background: colors.$red
+  color: colors.$white
+
+#clock
+  border-top-right-radius: $border-radius
+  border-bottom-right-radius: $border-radius
+  margin: $module-margins
+
+#idle_inhibitor
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 200ms
+
+  &.activated
+    background: colors.$text
+    color: colors.$base
+
+#pulseaudio.muted
+  background: colors.$text
+  color: colors.$base
+
+#tooltip
+  background: colors.$base
+  color: colors.$text
+  border-radius: $border-radius
+  padding: 0.25rem 0.5rem
+  font-size: 0.75rem
+  font-weight: bold
+  margin: $module-margins
+
+#custom-notifier
+  background: colors.$base
+  border-radius: $border-radius
+  min-width: 1rem
+
+  &.notification
+    background: colors.$text
+    color: colors.$base
+
+  &.dnd-notification
+    background: colors.$base
+    color: colors.$text
+
+#system-monitor:first-child
+  border-top-left-radius: $border-radius
+  border-bottom-left-radius: $border-radius
+
+#system-monitor:last-child
+  border-top-right-radius: $border-radius
+  border-bottom-right-radius: $border-radius
+
+#networking:first-child
+  border-top-left-radius: $border-radius
+  border-bottom-left-radius: $border-radius
+
+#networking:last-child
+  border-top-right-radius: $border-radius
+  border-bottom-right-radius: $border-radius
+
+#custom-powermenu
+  background: colors.$base
+  padding-right: 0.5rem
+  margin: $module-margins
+  border-radius: $border-radius
+  min-width: 2rem

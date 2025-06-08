@@ -1,0 +1,127 @@
+@use "sass:color"
+@use "colors"
+
+$border-radius: 0.7em
+$bar-pad: 0.5em
+$transition-duration: 0.5s
+
+*
+    all: unset
+
+window#waybar
+    font-family: "JetBrainsMono Nerd Font Propo", "Noto Sans CJK JP", "Noto Sans", "Twemoji", "monospace"
+    font-size: 0.8em
+    background-color: transparent
+    color: colors.$text
+    transition: background-color $transition-duration, color $transition-duration
+
+button
+    min-width: 30px
+    min-height: 20px
+    transition: background-color $transition-duration, color $transition-duration
+
+tooltip
+    background-color: colors.$base
+    color: colors.$text
+    padding: 1em
+    transition: background-color $transition-duration, color $transition-duration
+
+menu
+    background-color: colors.$base
+    padding: 0.5em
+    transition: background-color $transition-duration
+
+.modules-left
+    background-color: colors.$base
+    border-radius: $border-radius
+    transition: background-color $transition-duration
+
+.modules-center .module
+    background-color: colors.$base
+    border-radius: $border-radius
+    padding-left: $bar-pad
+    padding-right: $bar-pad
+    transition: background-color $transition-duration, color $transition-duration
+
+    &:hover
+        background-color: colors.$text
+        color: colors.$base
+
+.modules-right
+    background-color: colors.$base
+    border-radius: $border-radius
+    padding-left: $bar-pad
+    transition: background-color $transition-duration
+
+    & .module
+        padding-left: 10px
+        padding-right: 11px
+        background-image: linear-gradient(colors.$text)
+        background-size: 1px 60%
+        background-position: 100% 50%
+        background-repeat: no-repeat
+        transition: background-size $transition-duration
+
+        &:hover
+            background-size: 2px 100%
+
+#workspaces button
+    color: colors.$text
+    border-radius: $border-radius
+    transition: background-color $transition-duration, color $transition-duration
+
+    &.urgent
+        background-color: colors.$red
+
+    &.empty
+        color: color.scale(colors.$text, $alpha: -80%)
+
+    &.active
+        color: colors.$base
+        background-color: colors.$text
+
+    &:hover
+        background-color: colors.$text
+        color: colors.$base
+
+#privacy
+    padding-right: 8px
+    background-image: linear-gradient(colors.$text)
+    background-size: 1px 60%
+    background-position: 100% 50%
+    background-repeat: no-repeat
+    transition: background-size $transition-duration
+
+    &:hover
+        background-size: 2px 100%
+
+#cpu:hover,
+#memory:hover,
+#bluetooth:hover,
+#pulseaudio:hover
+    background-color: colors.$text
+    color: colors.$base
+    transition: background-color $transition-duration, color $transition-duration
+
+#clock
+    background-size: 0px
+    transition: background-size $transition-duration
+
+#tray
+    & button
+        padding: $bar-pad
+        transition: padding $transition-duration
+
+    & label
+        padding: $bar-pad
+        transition: padding $transition-duration
+
+#mpris
+    &.playing
+        background: colors.$text
+        color: colors.$base
+        transition: background-color $transition-duration, color $transition-duration
+
+    &:hover .playing
+        background: colors.$text
+        color: colors.$base

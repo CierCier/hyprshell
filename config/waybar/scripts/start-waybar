@@ -1,0 +1,35 @@
+#! /usr/bin/bash
+
+# Start waybar with custom config and style
+# This script is meant to be used with the hyprctl tool
+
+
+user=$(whoami)
+runtime_dir="/tmp/waybar-$user"
+
+config_home="$HOME/.config/waybar"
+
+theme="$1"
+if [ -z "$theme" ]; then
+    theme="stellar"
+fi
+
+
+
+
+conf_dir="$config_home/theme/$theme"
+config="$conf_dir/config.jsonc"
+
+
+style_sass="$conf_dir/style.sass"
+style_css="$runtime_dir/style.css"
+
+
+killall waybar
+
+
+mkdir -p "$runtime_dir"
+
+sass -I $config_home  "$style_sass" "$style_css"
+
+waybar -c "$config" -s "$style_css" & disown

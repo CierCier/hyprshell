@@ -1,0 +1,36 @@
+#! /usr/bin/env bash
+
+
+API_URL="http://wttr.in/{}?format=2"
+CITY="$WEATHER_CITY"
+if [ -z "$CITY" ]; then
+    CITY="$1"
+fi
+
+if [ -z "$TIMEOUT" ]; then
+    TIMEOUT=10
+fi
+
+
+
+get_city(){
+    if [ -z "$CITY" ]; then
+        CITY=$(curl -s "ipinfo.io/json" | jq -r '.city')
+    fi
+}
+
+get_weather(){
+    url=$(echo $API_URL | sed "s/{}/$CITY/")
+    WEATHER=$(curl -s --max-time $TIMEOUT "$url")
+    echo "$WEATHER"
+}
+
+get_city
+WEATHER=$(get_weather)
+
+if [ -z "$WEATHER" ]; then
+    echo "Weather unavailable"
+else
+    echo "$CITY: $WEATHER"
+fi
+
