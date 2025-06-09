@@ -4,6 +4,3 @@
 [submodule "config/quickshell"]
 	path = config/quickshell
 	url = https://github.com/CierCier/shell
-[submodule "scripts"]
-	path = scripts
-	url = https://github.com/CierCier/shell-scripts
