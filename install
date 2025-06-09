@@ -1,0 +1,149 @@
+#! /usr/bin/env sh
+
+
+if [ -z $1 ]; then
+    git_url="https://github.com/CierCier/hyprshell.git"
+else
+    git_url=$1
+fi
+
+install_paru(){
+    if ! command -v paru >/dev/null 2>&1; then
+        echo "Installing paru..."
+        sudo pacman -S --noconfirm base-devel git rustup
+        rustup default nightly
+        git clone https://aur.archlinux.org/paru.git
+        cd paru || exit
+        makepkg -si --noconfirm
+        cd .. || exit
+        rm -rf paru
+    else
+        echo "paru is already installed."
+    fi
+}
+
+
+find_aur_helper(){
+    if command -v paru >/dev/null 2>&1; then
+        echo "paru"
+    elif command -v yay >/dev/null 2>&1; then
+        echo "yay"
+    else
+        install_paru
+        echo "paru"
+    fi
+}
+
+AURHELPER=$(find_aur_helper)
+
+ensure_pkg(){
+    if [ -z "$($AURHELPER -Q "$1" 2>/dev/null)" ]; then
+        echo "Installing $1..."
+        $AURHELPER -S --noconfirm "$1"
+    else
+        echo "$1 is already installed."
+    fi
+}
+
+
+PKGLIST=(
+    "adw-gtk-theme"
+    "blueberry"
+    "bluez-utils"
+    "breezex-cursor-theme"
+    "brightnessctl"
+    "cliphist"
+    "btop"
+    "ddcutil"
+    "dart-sass"
+    "fastfetch"
+    "fd"
+    "fish"
+    "fish-fzf"
+    "fisher"
+    "fuzzel"
+    "grimblast-git"
+    "gst-plugin-pipewire"
+    "gst-plugins-bad"
+    "gst-plugins-good"
+    "gst-plugins-ugly"
+    "gvfs"
+    "hyprland"
+    "hypridle"
+    "hyprlock"
+    "hyprpicker"
+    "hyprpolkitagent"
+    "imagemagick"
+    "imv"
+    "imd"
+    "kitty"
+    "less"
+    "kvantum"
+    "kvantum-theme-fluent-git"
+    "neovim"
+    "network-manager-applet"
+    "networkmanager"
+    "ntfs-3g"
+    "nwg-look"
+    "pamixer"
+    "pipewire"
+    "pipewire-alsa"
+    "pipewire-jack"
+    "pipewire-pulse"
+    "plymouth"
+    "power-profiles-daemon"
+    "python-materialyoucolor-git"
+    "python-rich"
+    "qt5-wayland"
+    "qt5ct"
+    "qt6-wayland"
+    "qt6ct"
+    "quickshell"
+    "rofi-wayland"
+    "rofi-dmenu"
+    "swww"
+    "thunar"
+    "thunar-archive-plugin"
+    "thunar-volman"
+    
+    "ttf-imb-plex"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-material-symbols-variable-git"
+    "tumbler"
+    "uwsm"
+    "wallust"
+    "wget"
+    "wireplumber"
+    "xarchiver"
+    "xdg-desktop-portal-hyprland"
+    "xfce4-settings"
+)
+
+
+ALL_PKGS=$(echo "${PKGLIST[@]}")
+
+$AURHELPER -S --noconfirm $ALL_PKGS
+
+#clone repo
+ensure_pkg git
+
+git clone --recursive "$git_url" $HOME/.hyprshell
+if [ $? -ne 0 ]; then
+    echo "Failed to clone repository. Please check the URL or your internet connection."
+    exit 1
+fi
+
+cd $HOME/.hyprshell || exit
+
+configs=$(/bin/ls -A1 config)
+for config in $configs; do
+    if [ -d "$HOME/.config/$config" ]; then
+        mv "$HOME/.config/$config" "$HOME/.config/${config}.bak"
+    fi
+
+    ln -s "$HOME/.hyprshell/config/$config" "$HOME/.config/$config"
+done
+
+
+mv "$HOME/.local/bin" "$HOME/.local/bin.bak" 2>/dev/null
+ln -s "$HOME/.hyprshell/local/bin/" "$HOME/.local/bin"
