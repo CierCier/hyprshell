@@ -1,6 +1,7 @@
 #! /usr/bin/env sh
 
 
+
 if [ -z $1 ]; then
     git_url="https://github.com/CierCier/hyprshell.git"
 else
@@ -145,5 +146,11 @@ for config in $configs; do
 done
 
 
+mkdir -p "$HOME/.cache/shell"
+mkdir -p "$HOME/.cache/colorscheme"
+
 mv "$HOME/.local/bin" "$HOME/.local/bin.bak" 2>/dev/null
 ln -s "$HOME/.hyprshell/local/bin/" "$HOME/.local/bin"
+
+
+$HOME/.local/bin/wallpaper $HOME/.hyprshell/wallpaper/Breakthrough.png
