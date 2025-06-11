@@ -7,20 +7,6 @@ import argparse
 from pathlib import Path
 
 
-def print_help():
-    print(
-        """Usage: wallpaper <options> [image_path]
-Options:
-  -h,  --help: Show this help message
-  -c,  --crop: Crop the image to fit the screen
-  -f,  --fit: Resize the image to fit the screen
-  -s,  --stretch: Stretch the image to fit the screen
-  -wa, --wal-args: Pass additional arguments to wallust
-  -S,  --scheme: prints the current colorscheme"""
-    )
-    sys.exit(0)
-
-
 def restore():
     file_path = os.path.expanduser("~/.cache/wallpaper")
     if os.path.exists(file_path):
@@ -111,18 +97,40 @@ def use_mpv(img_path):
 
 
 def main():
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("-h", "--help", action="store_true")
-    parser.add_argument("-c", "--crop", action="store_true")
-    parser.add_argument("-f", "--fit", action="store_true")
-    parser.add_argument("-s", "--stretch", action="store_true")
-    parser.add_argument("-wa", "--wal-args", nargs=1)
-    parser.add_argument("-S", "--scheme", action="store_true")
-    parser.add_argument("image_path", nargs="?")
-    args = parser.parse_args()
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument(
+        "-c",
+        "--crop",
+        action="store_true",
+        help="Crop the image to fit the screen (default behavior)",
+        default=True,
+    )
 
-    if args.help:
-        print_help()
+    parser.add_argument(
+        "-f", "--fit", action="store_true", help="Fit the image to the screen"
+    )
+    parser.add_argument(
+        "-s",
+        "--stretch",
+        action="store_true",
+        help="Stretch the image to fit the screen",
+    )
+    parser.add_argument(
+        "-wa", "--wal-args", nargs=1, help="Additional arguments for wallust"
+    )
+    parser.add_argument(
+        "-S", "--scheme", action="store_true", help="Generate colorscheme only"
+    )
+    parser.add_argument(
+        "--light",
+        "-l",
+        action="store_true",
+        help="Use light theme for colorscheme generation",
+        default=False,
+    )
+
+    parser.add_argument("image_path", nargs="?", help="Path to the image or video file")
+    args = parser.parse_args()
 
     resize = "crop"
     if args.fit:
@@ -133,8 +141,16 @@ def main():
     img_path = args.image_path or restore()
     img_path = os.path.realpath(img_path)
 
+    scheme_command = ["colorscheme", "generate", img_path]
+    if args.light:
+        scheme_command.append("-l")
+
+    subprocess.run(
+        (scheme_command),
+        check=True,
+    )
+
     if args.scheme:
-        subprocess.run(["colorscheme", img_path])
         sys.exit(0)
 
     if not img_path or not Path(img_path).exists():
@@ -160,8 +176,6 @@ def main():
         sys.exit(1)
 
     no_stdout(["hyprctl", "reload"])
-
-    subprocess.run(["colorscheme", img_path])
 
     with open(os.path.expanduser("~/.cache/wallpaper"), "w") as file:
         file.write(img_path)

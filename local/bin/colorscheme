@@ -7,11 +7,14 @@ from collections import Counter
 import math
 from materialyoucolor.quantize import QuantizeCelebi
 from materialyoucolor.score.score import Score
-
 import hashlib
+import shutil
+import glob
 
 home = os.path.expanduser("~")
 current = f"{home}/.cache/wallpaper.colors"
+theme = f"{home}/.cache/wallpaper.theme"
+
 cache_dir = (
     f"{home}/.cache/colorscheme"  # cache dir contains cache of colorschemes for files
 )
@@ -73,7 +76,7 @@ def rgb_to_hsl(rgb):
 def hsl_to_rgb(h, s, l):
     """Convert HSL to RGB."""
     r, g, b = colorsys.hls_to_rgb(h, l, s)
-    return tuple(int(x * 255) for x in (r, g, b))
+    return tuple(max(0, min(255, int(x * 255))) for x in (r, g, b))
 
 
 def adjust_lightness(rgb, factor):
@@ -90,112 +93,214 @@ def adjust_saturation(rgb, factor):
     return hsl_to_rgb(h, s, l)
 
 
-def generate_material_you_palette(primary_color):
+def generate_material_you_palette(primary_color, light_theme=False):
     """Generate Material You color palette from a primary color."""
 
     # Base catppuccin-inspired colors (can be customized)
-    base_colors = {
-        "rosewater": (242, 213, 207),
-        "flamingo": (238, 190, 190),
-        "pink": (244, 184, 228),
-        "mauve": (202, 158, 230),
-        "red": (231, 130, 132),
-        "maroon": (234, 153, 156),
-        "peach": (239, 159, 118),
-        "yellow": (229, 200, 144),
-        "green": (166, 209, 137),
-        "teal": (129, 200, 190),
-        "sky": (153, 209, 219),
-        "sapphire": (133, 193, 220),
-        "blue": (140, 170, 238),
-        "lavender": (186, 187, 241),
-    }
+    if light_theme:
+        base_colors = {
+            "rosewater": (220, 138, 120),
+            "flamingo": (221, 120, 120),
+            "pink": (234, 118, 203),
+            "mauve": (136, 57, 239),
+            "red": (210, 15, 57),
+            "maroon": (230, 69, 83),
+            "peach": (254, 100, 11),
+            "yellow": (223, 142, 29),
+            "green": (64, 160, 43),
+            "teal": (23, 146, 153),
+            "sky": (4, 165, 229),
+            "sapphire": (32, 159, 181),
+            "blue": (30, 102, 245),
+            "lavender": (114, 135, 253),
+        }
+
+        # Light theme surfaces
+        surfaces = {
+            "text": (76, 79, 105),
+            "subtext1": (92, 95, 119),
+            "subtext0": (108, 111, 133),
+            "overlay2": (124, 127, 147),
+            "overlay1": (140, 143, 161),
+            "overlay0": (156, 160, 176),
+            "surface2": (172, 176, 190),
+            "surface1": (188, 192, 204),
+            "surface0": (204, 208, 218),
+            "base": (239, 241, 245),
+            "mantle": (230, 233, 239),
+            "crust": (220, 224, 232),
+        }
+    else:
+        base_colors = {
+            "rosewater": (242, 213, 207),
+            "flamingo": (238, 190, 190),
+            "pink": (244, 184, 228),
+            "mauve": (202, 158, 230),
+            "red": (231, 130, 132),
+            "maroon": (234, 153, 156),
+            "peach": (239, 159, 118),
+            "yellow": (229, 200, 144),
+            "green": (166, 209, 137),
+            "teal": (129, 200, 190),
+            "sky": (153, 209, 219),
+            "sapphire": (133, 193, 220),
+            "blue": (140, 170, 238),
+            "lavender": (186, 187, 241),
+        }
+
+        # Dark theme surfaces
+        surfaces = {
+            "text": (198, 208, 245),
+            "subtext1": (181, 191, 226),
+            "subtext0": (165, 173, 206),
+            "overlay2": (148, 156, 187),
+            "overlay1": (131, 139, 167),
+            "overlay0": (115, 121, 148),
+            "surface2": (98, 104, 128),
+            "surface1": (81, 87, 109),
+            "surface0": (65, 69, 89),
+            "base": (48, 52, 70),
+            "mantle": (41, 44, 60),
+            "crust": (35, 38, 52),
+        }
 
     # Generate surfaces based on primary color
     primary_hsl = rgb_to_hsl(primary_color)
 
-    # Dark theme surfaces
-    surfaces = {
-        "text": (198, 208, 245),
-        "subtext1": (181, 191, 226),
-        "subtext0": (165, 173, 206),
-        "overlay2": (148, 156, 187),
-        "overlay1": (131, 139, 167),
-        "overlay0": (115, 121, 148),
-        "surface2": (98, 104, 128),
-        "surface1": (81, 87, 109),
-        "surface0": (65, 69, 89),
-        "base": (48, 52, 70),
-        "mantle": (41, 44, 60),
-        "crust": (35, 38, 52),
-    }
-
-    # Material You system colors
-    material_colors = {
-        "success": base_colors["green"],
-        "primary_paletteKeyColor": primary_color,
-        "secondary_paletteKeyColor": adjust_saturation(primary_color, 0.7),
-        "tertiary_paletteKeyColor": adjust_lightness(primary_color, 0.8),
-        "neutral_paletteKeyColor": adjust_saturation(primary_color, 0.1),
-        "neutral_variant_paletteKeyColor": adjust_saturation(primary_color, 0.2),
-        # Background colors
-        "background": (18, 19, 24),
-        "onBackground": (227, 225, 233),
-        "surface": (18, 19, 24),
-        "surfaceDim": (18, 19, 24),
-        "surfaceBright": (56, 57, 63),
-        "surfaceContainerLowest": (13, 14, 19),
-        "surfaceContainerLow": (26, 27, 33),
-        "surfaceContainer": (30, 31, 37),
-        "surfaceContainerHigh": (41, 42, 47),
-        "surfaceContainerHighest": (52, 52, 58),
-        "onSurface": (227, 225, 233),
-        "surfaceVariant": (69, 70, 79),
-        "onSurfaceVariant": (198, 197, 208),
-        "inverseSurface": (227, 225, 233),
-        "inverseOnSurface": (47, 48, 54),
-        "outline": (144, 144, 154),
-        "outlineVariant": (69, 70, 79),
-        "shadow": (0, 0, 0),
-        "scrim": (0, 0, 0),
-        "surfaceTint": adjust_lightness(primary_color, 1.2),
-        # Primary colors
-        "primary": adjust_lightness(primary_color, 1.1),
-        "onPrimary": adjust_lightness(primary_color, 0.3),
-        "primaryContainer": adjust_lightness(primary_color, 0.7),
-        "onPrimaryContainer": adjust_lightness(primary_color, 1.3),
-        "inversePrimary": adjust_lightness(primary_color, 0.8),
-        # Secondary colors
-        "secondary": adjust_saturation(adjust_lightness(primary_color, 1.0), 0.6),
-        "onSecondary": adjust_lightness(primary_color, 0.4),
-        "secondaryContainer": adjust_lightness(primary_color, 0.5),
-        "onSecondaryContainer": adjust_lightness(primary_color, 1.2),
-        # Tertiary colors
-        "tertiary": adjust_lightness(primary_color, 0.9),
-        "onTertiary": adjust_lightness(primary_color, 0.3),
-        "tertiaryContainer": adjust_lightness(primary_color, 0.6),
-        "onTertiaryContainer": (0, 0, 0),
-        # Error colors
-        "error": (255, 180, 171),
-        "onError": (105, 0, 5),
-        "errorContainer": (147, 0, 10),
-        "onErrorContainer": (255, 218, 214),
-        # Fixed colors
-        "primaryFixed": adjust_lightness(primary_color, 1.3),
-        "primaryFixedDim": adjust_lightness(primary_color, 1.1),
-        "onPrimaryFixed": adjust_lightness(primary_color, 0.2),
-        "onPrimaryFixedVariant": adjust_lightness(primary_color, 0.7),
-        "secondaryFixed": adjust_lightness(primary_color, 1.2),
-        "secondaryFixedDim": adjust_saturation(
-            adjust_lightness(primary_color, 1.0), 0.6
-        ),
-        "onSecondaryFixed": adjust_lightness(primary_color, 0.25),
-        "onSecondaryFixedVariant": adjust_lightness(primary_color, 0.6),
-        "tertiaryFixed": (255, 215, 245),
-        "tertiaryFixedDim": adjust_lightness(primary_color, 0.9),
-        "onTertiaryFixed": adjust_lightness(primary_color, 0.2),
-        "onTertiaryFixedVariant": adjust_lightness(primary_color, 0.5),
-    }
+    if light_theme:
+        # Light theme Material You system colors
+        material_colors = {
+            "success": base_colors["green"],
+            "primary_paletteKeyColor": primary_color,
+            "secondary_paletteKeyColor": adjust_saturation(primary_color, 0.7),
+            "tertiary_paletteKeyColor": adjust_lightness(primary_color, 1.2),
+            "neutral_paletteKeyColor": adjust_saturation(primary_color, 0.1),
+            "neutral_variant_paletteKeyColor": adjust_saturation(primary_color, 0.2),
+            # Light theme background colors
+            "background": (255, 251, 254),
+            "onBackground": (28, 27, 31),
+            "surface": (255, 251, 254),
+            "surfaceDim": (223, 219, 229),
+            "surfaceBright": (255, 251, 254),
+            "surfaceContainerLowest": (255, 255, 255),
+            "surfaceContainerLow": (247, 243, 249),
+            "surfaceContainer": (241, 237, 243),
+            "surfaceContainerHigh": (236, 232, 238),
+            "surfaceContainerHighest": (230, 225, 232),
+            "onSurface": (28, 27, 31),
+            "surfaceVariant": (231, 224, 236),
+            "onSurfaceVariant": (73, 69, 79),
+            "inverseSurface": (49, 48, 51),
+            "inverseOnSurface": (244, 239, 244),
+            "outline": (121, 116, 126),
+            "outlineVariant": (202, 196, 208),
+            "shadow": (0, 0, 0),
+            "scrim": (0, 0, 0),
+            "surfaceTint": primary_color,
+            # Light theme primary colors
+            "primary": adjust_lightness(primary_color, 0.8),
+            "onPrimary": (255, 255, 255),
+            "primaryContainer": adjust_lightness(primary_color, 1.4),
+            "onPrimaryContainer": adjust_lightness(primary_color, 0.3),
+            "inversePrimary": adjust_lightness(primary_color, 1.2),
+            # Light theme secondary colors
+            "secondary": adjust_saturation(adjust_lightness(primary_color, 0.7), 0.6),
+            "onSecondary": (255, 255, 255),
+            "secondaryContainer": adjust_lightness(primary_color, 1.3),
+            "onSecondaryContainer": adjust_lightness(primary_color, 0.4),
+            # Light theme tertiary colors
+            "tertiary": adjust_lightness(primary_color, 0.6),
+            "onTertiary": (255, 255, 255),
+            "tertiaryContainer": adjust_lightness(primary_color, 1.4),
+            "onTertiaryContainer": adjust_lightness(primary_color, 0.3),
+            # Light theme error colors
+            "error": (186, 26, 26),
+            "onError": (255, 255, 255),
+            "errorContainer": (255, 218, 214),
+            "onErrorContainer": (65, 0, 2),
+            # Light theme fixed colors
+            "primaryFixed": adjust_lightness(primary_color, 1.4),
+            "primaryFixedDim": adjust_lightness(primary_color, 1.2),
+            "onPrimaryFixed": adjust_lightness(primary_color, 0.2),
+            "onPrimaryFixedVariant": adjust_lightness(primary_color, 0.7),
+            "secondaryFixed": adjust_lightness(primary_color, 1.3),
+            "secondaryFixedDim": adjust_saturation(
+                adjust_lightness(primary_color, 1.1), 0.6
+            ),
+            "onSecondaryFixed": adjust_lightness(primary_color, 0.25),
+            "onSecondaryFixedVariant": adjust_lightness(primary_color, 0.6),
+            "tertiaryFixed": (255, 215, 245),
+            "tertiaryFixedDim": adjust_lightness(primary_color, 1.1),
+            "onTertiaryFixed": adjust_lightness(primary_color, 0.2),
+            "onTertiaryFixedVariant": adjust_lightness(primary_color, 0.5),
+        }
+    else:
+        # Dark theme Material You system colors
+        material_colors = {
+            "success": base_colors["green"],
+            "primary_paletteKeyColor": primary_color,
+            "secondary_paletteKeyColor": adjust_saturation(primary_color, 0.7),
+            "tertiary_paletteKeyColor": adjust_lightness(primary_color, 0.8),
+            "neutral_paletteKeyColor": adjust_saturation(primary_color, 0.1),
+            "neutral_variant_paletteKeyColor": adjust_saturation(primary_color, 0.2),
+            # Background colors
+            "background": (18, 19, 24),
+            "onBackground": (227, 225, 233),
+            "surface": (18, 19, 24),
+            "surfaceDim": (18, 19, 24),
+            "surfaceBright": (56, 57, 63),
+            "surfaceContainerLowest": (13, 14, 19),
+            "surfaceContainerLow": (26, 27, 33),
+            "surfaceContainer": (30, 31, 37),
+            "surfaceContainerHigh": (41, 42, 47),
+            "surfaceContainerHighest": (52, 52, 58),
+            "onSurface": (227, 225, 233),
+            "surfaceVariant": (69, 70, 79),
+            "onSurfaceVariant": (198, 197, 208),
+            "inverseSurface": (227, 225, 233),
+            "inverseOnSurface": (47, 48, 54),
+            "outline": (144, 144, 154),
+            "outlineVariant": (69, 70, 79),
+            "shadow": (0, 0, 0),
+            "scrim": (0, 0, 0),
+            "surfaceTint": adjust_lightness(primary_color, 1.2),
+            # Primary colors
+            "primary": adjust_lightness(primary_color, 1.1),
+            "onPrimary": adjust_lightness(primary_color, 0.3),
+            "primaryContainer": adjust_lightness(primary_color, 0.7),
+            "onPrimaryContainer": adjust_lightness(primary_color, 1.3),
+            "inversePrimary": adjust_lightness(primary_color, 0.8),
+            # Secondary colors
+            "secondary": adjust_saturation(adjust_lightness(primary_color, 1.0), 0.6),
+            "onSecondary": adjust_lightness(primary_color, 0.4),
+            "secondaryContainer": adjust_lightness(primary_color, 0.5),
+            "onSecondaryContainer": adjust_lightness(primary_color, 1.2),
+            # Tertiary colors
+            "tertiary": adjust_lightness(primary_color, 0.9),
+            "onTertiary": adjust_lightness(primary_color, 0.3),
+            "tertiaryContainer": adjust_lightness(primary_color, 0.6),
+            "onTertiaryContainer": (0, 0, 0),
+            # Error colors
+            "error": (255, 180, 171),
+            "onError": (105, 0, 5),
+            "errorContainer": (147, 0, 10),
+            "onErrorContainer": (255, 218, 214),
+            # Fixed colors
+            "primaryFixed": adjust_lightness(primary_color, 1.3),
+            "primaryFixedDim": adjust_lightness(primary_color, 1.1),
+            "onPrimaryFixed": adjust_lightness(primary_color, 0.2),
+            "onPrimaryFixedVariant": adjust_lightness(primary_color, 0.7),
+            "secondaryFixed": adjust_lightness(primary_color, 1.2),
+            "secondaryFixedDim": adjust_saturation(
+                adjust_lightness(primary_color, 1.0), 0.6
+            ),
+            "onSecondaryFixed": adjust_lightness(primary_color, 0.25),
+            "onSecondaryFixedVariant": adjust_lightness(primary_color, 0.6),
+            "tertiaryFixed": (255, 215, 245),
+            "tertiaryFixedDim": adjust_lightness(primary_color, 0.9),
+            "onTertiaryFixed": adjust_lightness(primary_color, 0.2),
+            "onTertiaryFixedVariant": adjust_lightness(primary_color, 0.5),
+        }
 
     # Combine all colors
     all_colors = {**base_colors, **surfaces, **material_colors}
@@ -207,24 +312,47 @@ def compute_file_hash(file_path, algorithm="sha256"):
     """Compute the hash of a file using the specified algorithm."""
     hash_func = hashlib.new(algorithm)
 
-    with open(file_path, "rb") as file:
-        # Read the file in chunks of 8192 bytes
-        while chunk := file.read(8192):
-            hash_func.update(chunk)
+    try:
+        with open(file_path, "rb") as file:
+            # Read the file in chunks of 8192 bytes
+            while chunk := file.read(8192):
+                hash_func.update(chunk)
+        return hash_func.hexdigest()
+    except Exception as e:
+        print(f"Error computing hash for {file_path}: {e}", file=sys.stderr)
+        return None
 
-    return hash_func.hexdigest()
+
+def safe_copy_file(src, dst):
+    """Safe copy"""
+    try:
+        shutil.copy2(src, dst)
+        return True
+    except Exception as e:
+        return False
 
 
-def create_color_scheme(image_path):
+def create_color_scheme(image_path, light_theme=False):
     """Extract colors from image and print in Material You format."""
 
-    file_hash = compute_file_hash(image_path)
-    cache_path = f"{cache_dir}/{file_hash}.colors"
+    try:
+        with open(theme, "w") as f:
+            f.write("light" if light_theme else "dark")
+    except Exception as e:
+        print(f"Error writing theme file: {e}", file=sys.stderr)
+        return False
 
+    file_hash = compute_file_hash(image_path)
+    if not file_hash:
+        return False
+
+    # Include theme type in cache filename to separate light/dark caches
+    theme_suffix = "light" if light_theme else "dark"
+    cache_path = f"{cache_dir}/{file_hash}_{theme_suffix}.colors"
+
+    # Check if cached version exists
     if os.path.exists(cache_path):
-        # copy cached file
-        os.system(f"cp {cache_path} {current}")
-        return True
+        return safe_copy_file(cache_path, current)
 
     dominant_colors = extract_dominant_colors(image_path)
 
@@ -235,29 +363,289 @@ def create_color_scheme(image_path):
     # Use the most dominant color as primary
     primary_color = dominant_colors[0]
 
-    # Generate full palette
-    palette = generate_material_you_palette(primary_color)
+    # Generate full palette with theme support
+    palette = generate_material_you_palette(primary_color, light_theme)
     out_str = ""
     for name, rgb in palette.items():
         hex_color = rgb_to_hex(rgb)
         out_str += f"{name} {hex_color}\n"
-    with open(cache_path, "w") as f:
-        f.write(out_str)
 
-    os.system(f"cp {cache_path} {current}")
+    try:
+        # Ensure cache directory exists
+        os.makedirs(cache_dir, exist_ok=True)
+
+        # Write to cache file
+        with open(cache_path, "w") as f:
+            f.write(out_str)
+
+    except Exception as e:
+        print(f"Error writing cache file: {e}", file=sys.stderr)
+        return False
+
+    # Copy to current colors file
+    return safe_copy_file(cache_path, current)
+
+
+def list_cached_themes(image_path=None):
+    """List all cached themes, optionally for a specific image."""
+    if not os.path.exists(cache_dir):
+        return
+
+    cache_files = os.listdir(cache_dir)
+    if not cache_files:
+        return
+
+    if image_path:
+        file_hash = compute_file_hash(image_path)
+        if not file_hash:
+            return
+
+        light_cache = f"{file_hash}_light.colors"
+        dark_cache = f"{file_hash}_dark.colors"
+
+        print(f"Cache status for {os.path.basename(image_path)}:")
+        print(f"  Light theme: {'✓' if light_cache in cache_files else '✗'}")
+        print(f"  Dark theme:  {'✓' if dark_cache in cache_files else '✗'}")
+    else:
+        print("All cached themes:")
+        themes = {}
+        for cache_file in cache_files:
+            if cache_file.endswith(".colors"):
+                parts = cache_file.replace(".colors", "").split("_")
+                if len(parts) >= 2:
+                    file_hash = "_".join(parts[:-1])
+                    theme_type = parts[-1]
+                    if file_hash not in themes:
+                        themes[file_hash] = []
+                    themes[file_hash].append(theme_type)
+
+        for file_hash, theme_types in themes.items():
+            themes_str = ", ".join(sorted(theme_types))
+            print(f"  {file_hash[:8]}... ({themes_str})")
+
+
+def clear_cache(image_path=None, theme_type=None):
+    """Clear cache files. Can specify image and/or theme type."""
+    if not os.path.exists(cache_dir):
+        return True
+
+    removed_count = 0
+
+    if image_path:
+        file_hash = compute_file_hash(image_path)
+        if not file_hash:
+            return False
+
+        if theme_type:
+            # Remove specific theme for specific image
+            cache_file = f"{file_hash}_{theme_type}.colors"
+            cache_path = os.path.join(cache_dir, cache_file)
+            if os.path.exists(cache_path):
+                os.remove(cache_path)
+                removed_count = 1
+        else:
+            # Remove all themes for specific image
+            for theme in ["light", "dark"]:
+                cache_file = f"{file_hash}_{theme}.colors"
+                cache_path = os.path.join(cache_dir, cache_file)
+                if os.path.exists(cache_path):
+                    os.remove(cache_path)
+                    removed_count += 1
+    else:
+        # Remove all cache files
+        cache_files = [f for f in os.listdir(cache_dir) if f.endswith(".colors")]
+        for cache_file in cache_files:
+            os.remove(os.path.join(cache_dir, cache_file))
+            removed_count += 1
+
     return True
+
+
+def find_images(path):
+    """Find all image files recursively in a given path."""
+    image_extensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff", ".webp"}
+    images = []
+
+    if os.path.isfile(path):
+        # Single file
+        if any(path.lower().endswith(ext) for ext in image_extensions):
+            images.append(path)
+    elif os.path.isdir(path):
+        # Recursive directory search
+        for root, dirs, files in os.walk(path):
+            for file in files:
+                if any(file.lower().endswith(ext) for ext in image_extensions):
+                    images.append(os.path.join(root, file))
+
+    return sorted(images)
+
+
+def build_cache(path, themes=None):
+    """Build cache for all images in the given path.
+
+    Args:
+        path: File or directory path to process
+        themes: List of themes to build ('light', 'dark', or both)
+    """
+    if themes is None:
+        themes = ["light", "dark"]
+
+    images = find_images(path)
+    if not images:
+        return False
+
+    total_images = len(images)
+    processed = 0
+    cached = 0
+    failed = 0
+
+    for image_path in images:
+        image_processed = False
+        for theme_type in themes:
+            light_theme = theme_type == "light"
+
+            # Check if already cached
+            file_hash = compute_file_hash(image_path)
+            if not file_hash:
+                continue
+
+            theme_suffix = "light" if light_theme else "dark"
+            cache_path = f"{cache_dir}/{file_hash}_{theme_suffix}.colors"
+
+            if os.path.exists(cache_path):
+                if not image_processed:
+                    cached += 1
+                    image_processed = True
+                continue
+
+            # Generate cache
+            dominant_colors = extract_dominant_colors(image_path)
+            if not dominant_colors:
+                if not image_processed:
+                    failed += 1
+                    image_processed = True
+                continue
+
+            primary_color = dominant_colors[0]
+            palette = generate_material_you_palette(primary_color, light_theme)
+
+            out_str = ""
+            for name, rgb in palette.items():
+                hex_color = rgb_to_hex(rgb)
+                out_str += f"{name} {hex_color}\n"
+
+            try:
+                os.makedirs(cache_dir, exist_ok=True)
+                with open(cache_path, "w") as f:
+                    f.write(out_str)
+                if not image_processed:
+                    processed += 1
+                    image_processed = True
+            except Exception:
+                if not image_processed:
+                    failed += 1
+                    image_processed = True
+
+    # Print summary
+    print(f"Cache build complete:")
+    print(f"  Total images: {total_images}")
+    print(f"  Processed: {processed}")
+    print(f"  Already cached: {cached}")
+    print(f"  Failed: {failed}")
+
+    return failed == 0
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="Extract Material You color scheme from image"
     )
-    parser.add_argument("image_path", help="Path to the image file")
 
-    args = parser.parse_args()
+    # Create subparsers for different commands
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
-    if not create_color_scheme(args.image_path):
-        sys.exit(1)
+    # Generate command (default)
+    generate_parser = subparsers.add_parser(
+        "generate", help="Generate color scheme from image"
+    )
+    generate_parser.add_argument("image_path", help="Path to the image file")
+    generate_parser.add_argument(
+        "-l", "--light", action="store_true", help="Use light theme", default=False
+    )
+
+    # Cache list command
+    list_parser = subparsers.add_parser("list-cache", help="List cached themes")
+    list_parser.add_argument(
+        "image_path", nargs="?", help="Path to specific image file (optional)"
+    )
+
+    # Cache clear command
+    clear_parser = subparsers.add_parser("clear-cache", help="Clear cache files")
+    clear_parser.add_argument(
+        "image_path", nargs="?", help="Path to specific image file (optional)"
+    )
+    clear_parser.add_argument(
+        "--theme-type",
+        choices=["light", "dark"],
+        help="Specify theme type for cache operations",
+    )
+
+    # Build cache command
+    build_parser = subparsers.add_parser("build-cache", help="Build cache for images")
+    build_parser.add_argument("path", help="Path to file or directory")
+    build_parser.add_argument(
+        "--themes",
+        nargs="+",
+        choices=["light", "dark"],
+        help="Specify themes to build cache for",
+    )
+
+    # For backward compatibility, if no subcommand is used, treat first arg as image path
+    if len(sys.argv) > 1 and sys.argv[1] not in [
+        "generate",
+        "list-cache",
+        "clear-cache",
+        "build-cache",
+    ]:
+        # Legacy mode - treat as generate command
+        parser.add_argument("image_path", help="Path to the image file")
+        parser.add_argument(
+            "-l", "--light", action="store_true", help="Use light theme", default=False
+        )
+
+        args = parser.parse_args()
+
+        if not os.path.exists(args.image_path):
+            print(f"Error: Image file '{args.image_path}' not found", file=sys.stderr)
+            sys.exit(1)
+
+        if not create_color_scheme(args.image_path, args.light):
+            sys.exit(1)
+    else:
+        args = parser.parse_args()
+
+        # Handle subcommands
+        if args.command == "list-cache":
+            list_cached_themes(args.image_path)
+        elif args.command == "clear-cache":
+            if not clear_cache(args.image_path, args.theme_type):
+                sys.exit(1)
+        elif args.command == "generate":
+            if not os.path.exists(args.image_path):
+                print(
+                    f"Error: Image file '{args.image_path}' not found", file=sys.stderr
+                )
+                sys.exit(1)
+            if not create_color_scheme(args.image_path, args.light):
+                sys.exit(1)
+        elif args.command == "build-cache":
+            if not os.path.exists(args.path):
+                print(f"Error: Path '{args.path}' not found", file=sys.stderr)
+                sys.exit(1)
+            if not build_cache(args.path, args.themes):
+                sys.exit(1)
+        else:
+            parser.print_help()
 
 
 if __name__ == "__main__":
