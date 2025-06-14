@@ -16,6 +16,15 @@ def restore():
     return ""
 
 
+def restore_theme():
+    file_path = os.path.expanduser("~/.cache/wallpaper.theme")
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            theme = file.read().strip()
+            return theme
+    return "dark"
+
+
 def no_stdout(cmd):
     return subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -122,11 +131,12 @@ def main():
         "-S", "--scheme", action="store_true", help="Generate colorscheme only"
     )
     parser.add_argument(
-        "--light",
-        "-l",
-        action="store_true",
+        "--theme",
+        "-t",
+        choices=["dark", "light", "d", "l"],
         help="Use light theme for colorscheme generation",
-        default=False,
+        default=None,
+        action="store",
     )
 
     parser.add_argument("image_path", nargs="?", help="Path to the image or video file")
@@ -139,10 +149,18 @@ def main():
         resize = "stretch"
 
     img_path = args.image_path or restore()
-    img_path = os.path.realpath(img_path)
+    img_path = os.path.realpath(os.path.expanduser(img_path))
 
-    scheme_command = ["colorscheme", "generate", img_path]
-    if args.light:
+    if args.theme is None:
+        args.theme = restore_theme()
+
+    scheme_command = [
+        os.path.expanduser("~/.local/bin/colorscheme"),
+        "generate",
+        img_path,
+    ]
+
+    if args.theme == "light" or args.theme == "l":
         scheme_command.append("-l")
 
     subprocess.run(

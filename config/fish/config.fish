@@ -23,17 +23,12 @@ end
 
 
 # Path Manipulation
-if test -d $HOME/.local/bin
-    set -U fish_user_paths $fish_user_paths $HOME/.local/bin
-end
 
+if test -d $HOME/.local/bin
+	fish_add_path $HOME/.local/bin
+end
 
 if test -d $HOME/.cargo/bin
-	set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
+	fish_add_path $HOME/.cargo/bin
 end
-
-if test -d $HOME/go/bin
-	set -U fish_user_paths $fish_user_paths $HOME/go/bin
-end
-
 

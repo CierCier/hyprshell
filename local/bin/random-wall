@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/"
+
+random_image=$(find "$WALLPAPER_DIR" -type f \
+  | while read -r file; do
+      mimetype=$(file --mime-type -b "$file")
+      case "$mimetype" in
+        image/*) echo "$file" ;;
+      esac
+    done | shuf -n 1)
+
+
+$HOME/.local/bin/wallpaper "$random_image"
