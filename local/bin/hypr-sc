@@ -1,0 +1,82 @@
+#! /usr/bin/env bash
+
+SCREENSHOT_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}/Screenshots"
+
+# Check for required tools
+tool_exists() { command -v "$1" >/dev/null 2>&1; }
+
+notify() {
+    notify-send "$1" 
+}
+
+
+if ! tool_exists grimblast; then
+    notify "grimblast is required but not installed." >&2
+    exit 1
+fi
+
+if ! tool_exists wl-copy; then
+    notify "wl-copy is required to copy screenshots" >&2
+fi
+
+
+if [ ! -d "$SCREENSHOT_DIR" ]; then
+	mkdir -p "$SCREENSHOT_DIR"
+fi
+
+mode=$1
+
+if [ -z "$mode" ]; then
+	mode="screen"
+fi
+
+if [ "$mode" == "ocr" ]; then
+    TMP_SHOT="/tmp/$(whoami)-snip.png"
+    grimblast save area "$TMP_SHOT"
+    if tool_exists tesseract; then
+        tesseract -l eng "$TMP_SHOT" - | wl-copy
+    else
+        notify "tesseract is required for OCR mode." >&2
+    fi
+    rm "$TMP_SHOT"
+    exit 0
+fi
+
+if [ "$mode" == "edit" ]; then
+    TMP_SHOT="/tmp/$(whoami)-snip.png"
+    grimblast save area "$TMP_SHOT"
+    if tool_exists swappy; then
+        swappy -f "$TMP_SHOT"
+    else
+        notify "swappy is required for edit mode." >&2
+    fi
+    rm "$TMP_SHOT"
+    exit 0
+fi
+
+PICNAME="Screenshot $(date '+%Y-%m-%d %H%M%S').png"
+PICPATH="$SCREENSHOT_DIR/$PICNAME"
+
+success=0
+
+if [ "$mode" == "area" ]; then
+    grimblast copysave area "$PICPATH"
+    success=$?
+elif [ "$mode" == "screen" ]; then
+    grimblast copysave screen "$PICPATH"
+    success=$?
+else
+    echo "Invalid mode: $mode. Use 'screen', 'area', 'edit', or 'ocr'."
+    exit 1
+fi
+
+
+# Copy to clipboard
+wl-copy < "$PICPATH"
+
+if success && tool_exists notify-send; then
+    notify-send "Screenshot saved" "$PICPATH" --icon="$PICPATH"
+else
+    echo "Screenshot saved to $PICPATH"
+fi
+

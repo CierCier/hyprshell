@@ -32,3 +32,11 @@ if test -d $HOME/.cargo/bin
 	fish_add_path $HOME/.cargo/bin
 end
 
+if test -d $HOME/.rye
+	fish_add_path $HOME/.rye/shims
+end
+
+if test -d $HOME/.encore
+	fish_add_path $HOME/.encore/bin
+end
+
