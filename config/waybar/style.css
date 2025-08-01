@@ -1,0 +1,78 @@
+@import "colors.css";
+
+
+* {
+	font-family: "Iosevka Nerd Font Propo";
+
+}
+
+window#waybar {
+	background-color: @surface;
+
+}
+
+#workspaces{
+	border: 1px solid @source_color;
+
+}
+
+#workspaces button{
+	color: @on_surface;
+	border: none;
+	border-radius: 0;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces button.empty {
+	color: @outline;
+	border: none;
+	border-radius: 0;
+}
+
+
+#workspaces button.active{
+	color: @on_primary;
+	background-color: @source_color;
+
+}
+
+#network,
+#pulseaudio,
+#disk,
+#cpu,
+#backlight,
+#battery,
+#clock
+{
+	
+	color: @on_surface;
+	border: 1px solid @source_color;
+	padding:0px 4px;
+}
+
+#network,
+#pulseaudio,
+#disk,
+#cpu{
+	/* larger modules */
+	min-width: 120px;
+}
+
+
+#backlight,
+#battery,
+#clock {
+	/* smaller modules */
+	min-width: 60px;
+}
+
+
+#tray{
+	margin: 0px 4px;
+	
+}
+
+#tray *{
+	margin: 0px 4px;
+}
+

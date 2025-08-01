@@ -25,13 +25,13 @@ check_contrast = true
 saturation = 50
 
 # Alpha value for templating, by default 100 (no other use whatsoever)
-alpha = 0
+alpha = 100
 
 [templates]
-hyprland = { template = "hyprland-colors.conf", target = "~/.config/hypr/hyprland/colors.conf" }
+hyprland = { template = "hyprland-colors.conf", target = "~/.config/hypr/conf/colors.conf" }
 hyprlock = { template = "hyprlock.conf", target = "~/.config/hypr/hyprlock.conf" } 
-waybar = { template = "waybar-colors.sass" , target = "~/.config/waybar/colors.sass" }
-ags = { template = "ags-colors.sass", target = "~/.config/ags/colors.sass" }
 rofi = { template = "rofi-colors.rasi", target = "~/.config/rofi/colors.rasi", pywal=true}
 neopywal = { template = "neopywal.vim", target = "~/.cache/wal/colors-wal.vim" }
 wlogout = { template = "wlogout.css", target = "~/.config/wlogout/colors.css" }
+eww = { template = "eww.scss", target = "~/.config/eww/colors.scss" }
+waybar = { template = "colors.css", target = "~/.config/waybar/colors.css" }

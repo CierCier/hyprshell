@@ -1,0 +1,106 @@
+{
+	"position": "bottom",
+	"layer": "top",
+	"output": "eDP-1",
+	"modules-left": [
+		"hyprland/workspaces",
+		"niri/workspaces"
+	],
+	"modules-center": [
+	],
+	"modules-right": [
+		"tray",
+		"network",
+		"disk",
+		"cpu",
+		"pulseaudio",
+		"backlight",
+		"battery",
+		"clock",
+	],
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "<span font='Material Symbols Outlined' font-weight='bold'  >{icon}</span>",
+		"persistent-workspaces": {
+			"*": 5
+		},
+		"format-icons" : {
+			"default": "expand_circle_down",
+			"active": "expand_circle_up",
+			"empty": "circle",
+		}
+	},
+
+	"tray": {
+	},
+	
+
+	"network": {
+		"interval": 1,
+		"format": "{icon} {ifname} : {ipaddr}",
+		"tooltip-format": "ESSID: {essid}\nSignal:{signalStrength}%\nSpeed: {bandwidthTotalBits}",
+		"format-icons": {
+			"wifi": "",
+			"ethernet": "󰈀",
+			"disconnected": "󰅛",
+			"disabled": "󰲛"
+		}
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}% {desc}",
+		"format-muted": "{icon}  {desc}",
+		"tooltip": false,
+		"format-icons": {
+			"default": "󰕾",
+			"headphones": "󰋋",
+			"headset": "󰋋",
+			"handsfree": "󰋋",
+		},
+		"on-click": "pavucontrol",
+		"on-click-right": "blueberry"
+	},
+
+	"disk": {
+		"interval": 60,
+		"path": "/",
+		"format": "Disk: {used}"
+		
+	},
+
+	"cpu": {
+		"interval": 1,
+		"format": "CPU {avg_frequency}GHz {usage}%",
+		
+	},
+	
+	"backlight": {
+		"format": " {percent}%",
+	},
+
+	"battery": {
+		"interval": 5,
+		"format": "{icon} {capacity}%",
+		"tooltop-format": "{time}",
+		"format-icons": {
+			"charging": ["󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+			"full": ["󰂃"],
+			"discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+			
+		}
+
+	},
+
+	"clock":{
+		"format": "{:%H:%M}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ffcc66'><b><u>{}</u></b></span>"
+			}
+		}
+	}
+}

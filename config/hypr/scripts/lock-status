@@ -1,0 +1,29 @@
+#! /usr/bin/env bash
+
+BATTERY_STATUS=$(cat /sys/class/power_supply/*/status 2>/dev/null)
+BATTERY_CAPACITY=$(cat /sys/class/power_supply/*/capacity 2>/dev/null)
+
+STRING=""
+
+if [ -z "$BATTERY_STATUS" ] || [ -z "$BATTERY_CAPACITY" ]; then
+    STRING="Battery information unavailable"
+else
+    STRING="$BATTERY_STATUS: $BATTERY_CAPACITY%"
+fi
+
+PLAYERCTL_STATUS=$(playerctl status 2>/dev/null)
+
+if [ "$PLAYERCTL_STATUS" = "Playing" ]; then
+    PLAYERCTL_TITLE=$(playerctl metadata title 2>/dev/null)
+    if [ -n "$PLAYERCTL_TITLE" ]; then
+        STRING="$STRING | Playing: $PLAYERCTL_TITLE"
+    else
+        STRING="$STRING | Playing"
+    fi
+elif [ "$PLAYERCTL_STATUS" = "Paused" ]; then
+    STRING="$STRING | Paused"
+fi
+
+echo "$STRING"
+
+

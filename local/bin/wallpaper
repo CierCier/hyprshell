@@ -29,8 +29,12 @@ def no_stdout(cmd):
     return subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
-def generate_colors(img_path):
-    no_stdout(["wallust", "-s", "run", img_path])
+def generate_colors(img_path, mode="dark"):
+    if mode == "d":
+        mode = "dark"
+    elif mode == "l":
+        mode = "light"
+    no_stdout(["matugen", "image", img_path, "--mode", mode])
 
 
 def generate_thumbnail(video):
@@ -125,9 +129,6 @@ def main():
         help="Stretch the image to fit the screen",
     )
     parser.add_argument(
-        "-wa", "--wal-args", nargs=1, help="Additional arguments for wallust"
-    )
-    parser.add_argument(
         "-S", "--scheme", action="store_true", help="Generate colorscheme only"
     )
     parser.add_argument(
@@ -154,21 +155,10 @@ def main():
     if args.theme is None:
         args.theme = restore_theme()
 
-    scheme_command = [
-        os.path.expanduser("~/.local/bin/colorscheme"),
-        "generate",
-        img_path,
-    ]
 
-    if args.theme == "light" or args.theme == "l":
-        scheme_command.append("-l")
-
-    subprocess.run(
-        (scheme_command),
-        check=True,
-    )
 
     if args.scheme:
+        generate_colors(img_path, mode=args.theme)
         sys.exit(0)
 
     if not img_path or not Path(img_path).exists():
@@ -183,10 +173,10 @@ def main():
         os.environ["WAL_BACKEND"] = "haishoku"
 
     if file_type.startswith("image/"):
-        generate_colors(img_path)
+        generate_colors(img_path, mode=args.theme)
         use_swww(img_path, resize)
     elif file_type.startswith("video/"):
-        thumb = generate_thumbnail(img_path)
+        thumb = generate_thumbnail(img_path, mode=args.theme)
         generate_colors(thumb)
         use_mpv(img_path)
     else:
@@ -197,6 +187,10 @@ def main():
 
     with open(os.path.expanduser("~/.cache/wallpaper"), "w") as file:
         file.write(img_path)
+
+    theme_str = "dark" if args.theme in ["dark", "d"] else "light"
+    with open(os.path.expanduser("~/.cache/wallpaper.theme"), "w") as file:
+        file.write(theme_str)
 
 
 if __name__ == "__main__":
