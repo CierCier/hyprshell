@@ -1772,3 +1772,10 @@ Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (500
 2025-07-31T19:09:40 player: played "pinnochioP/KTBK-F/Disc 2/01 セカイはまだ始まってすらいない.flac"
 2025-07-31T19:18:40 player: played "pinnochioP/KTBK-F/Disc 2/01 セカイはまだ始まってすらいない.flac"
 2025-08-01T01:20:59 player: played "pinnochioP/KTBK-F/Disc 2/01 セカイはまだ始まってすらいない.flac"
+2025-08-01T21:40:24 exception: Failed to open "/home/cier/.config/mpd/state": No such file or directory
+2025-08-01T21:40:24 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-08-01T21:40:24 exception: Failed to access /home/cier/Music/library: No such file or directory
+2025-08-02T11:13:32 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-08-02T15:11:02 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-08-02T16:45:25 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-08-02T19:36:37 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory

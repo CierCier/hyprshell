@@ -1,0 +1,13 @@
+[config]
+
+
+[templates.hyprland]
+input_path = "~/.config/hypr/colors.template"
+output_path = "~/.config/hypr/colors.conf"
+
+
+[templates.waybar]
+input_path = "~/.config/waybar/colors.template"
+output_path = "~/.config/waybar/colors.css"
+
+
