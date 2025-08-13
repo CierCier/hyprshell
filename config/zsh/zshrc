@@ -34,3 +34,5 @@ for file in $ZSH_CFG/config/*.zsh; do
 		source "$file"
 	fi
 done
+
+
