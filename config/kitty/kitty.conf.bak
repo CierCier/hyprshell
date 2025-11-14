@@ -57,9 +57,3 @@ font_size 12.0
 # keybinds nahui
 
 map ctrl+shift+v paste_from_clipboard
-
-
-# BEGIN_KITTY_THEME
-# Noctalia
-include current-theme.conf
-# END_KITTY_THEME

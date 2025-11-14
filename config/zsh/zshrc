@@ -36,3 +36,5 @@ for file in $ZSH_CFG/config/*.zsh; do
 done
 
 
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
