@@ -28,6 +28,10 @@ if [ -d $HOME/.cargo/bin  ]; then
 	export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+if [ -d $HOME/.bun/bin/ ]; then
+	export PATH="$HOME/.bun/bin:$PATH"
+fi
+
 
 for file in $ZSH_CFG/config/*.zsh; do
 	if [ -f "$file" ]; then
