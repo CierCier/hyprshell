@@ -1,0 +1,14 @@
+
+[SddmGreeterTheme]
+Name=Kristen
+Type=sddm-theme
+Description=Kristen! :D
+License=GPL-3.0-or-later
+Version=1.0
+Theme-Id=silent
+Theme-API=2.0
+MainScript=Main.qml
+TranslationsDirectory=translations
+QtVersion=6
+
+ConfigFile=theme.conf

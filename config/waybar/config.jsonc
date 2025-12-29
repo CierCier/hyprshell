@@ -1,1 +1,60 @@
-
+{
+  "layer": "top",
+  "position": "top",
+  "height": 20,
+  "margin-top": 4,
+  "spacing": 4,
+  "modules-left": [
+	  // Be real, you dont really want a ws indicator in niri
+	  // "niri/workspaces",
+	  "cpu",
+	  "memory"
+  ],
+  "modules-center": ["clock"],
+  "modules-right": ["tray", "pulseaudio", "battery"],
+  
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+  },
+  "niri/workspaces": {},
+  "cpu" : {
+	"format": "{icon} {load}@{avg_frequency}GHz",
+	"interval": 1
+  },
+  "memory": {
+	  "format": "{used}GB"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "󰖁 {icon}",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄉",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+  "tray": {
+    "spacing": 10,
+  },
+}

@@ -1545,3 +1545,53 @@ Warning: Xing stream size off by more than 1%, fuzzy seeking may be even more fu
 2025-11-03T17:51:51 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
 2025-11-24T23:12:30 exception: Failed to open /home/cier/.config/mpd/playlists: No such file or directory
 2025-12-08T00:00:37 update: added VESPERBELL/issen.flac
+2025-12-11T13:18:18 exception: Failed to access /home/cier/Music/library: No such file or directory
+2025-12-11T13:18:18 exception: Failed to open "/home/cier/.config/mpd/state": No such file or directory
+2025-12-11T13:18:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-11T22:46:06 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-12T09:38:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-12T20:50:42 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-13T09:47:27 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-13T18:44:54 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-13T21:55:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-14T10:52:49 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-14T13:38:59 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-14T18:05:17 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-15T18:33:43 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-16T01:00:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-16T21:40:46 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-16T22:23:48 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-17T21:42:48 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-18T13:51:35 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-19T11:01:30 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-19T13:39:49 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-20T01:33:07 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-20T21:38:36 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-21T10:48:47 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-21T14:17:39 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-21T21:17:09 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-22T00:11:13 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-22T14:10:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-23T23:48:23 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T13:05:12 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T14:12:39 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T15:06:22 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T15:56:55 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T17:58:18 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T21:00:19 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-24T23:50:50 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-25T20:22:40 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-25T23:01:43 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-26T01:04:36 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-26T10:55:12 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-26T19:12:04 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T11:51:12 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T16:43:24 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T16:58:50 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T17:05:13 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T17:07:33 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T17:18:38 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-27T19:06:45 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-28T12:19:59 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-29T14:53:37 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2025-12-29T16:31:21 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory

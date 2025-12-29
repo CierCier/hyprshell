@@ -105,8 +105,18 @@ def use_mpv(img_path):
     else:
         video = img_path
 
+    subprocess.run(["pkill", "mpvpaper"])
+
     for output in outputs:
-        no_stdout(["mpvpaper", "-s", "-o", "no-audio loop", output["name"], video])
+        # start as a background process
+        proc = [ "mpvpaper",
+                "--fork",
+                "-s", # auto stop 
+                "-o", "no-audio loop  ", # doesnt play audio, loop, scale to output
+                output["name"], video ]
+        p = subprocess.Popen(proc)
+
+
 
 
 def main():
@@ -176,7 +186,7 @@ def main():
         generate_colors(img_path, mode=args.theme)
         use_swww(img_path, resize)
     elif file_type.startswith("video/"):
-        thumb = generate_thumbnail(img_path, mode=args.theme)
+        thumb = generate_thumbnail(img_path)
         generate_colors(thumb)
         use_mpv(img_path)
     else:

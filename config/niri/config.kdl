@@ -5,8 +5,9 @@ spawn-at-startup "gnome-keyring-daemon" "--start" "--components=pkcs11,secrets,s
 
 spawn-at-startup "clipse -listen"
 spawn-at-startup "nwg-look" "-a"
+spawn-at-startup "swww-daemon"
 
-spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-at-startup "qs" "-c" "noctalia-shell"
 
 
 
@@ -16,8 +17,8 @@ input {
             layout "us"
         }
 
-        repeat-delay 400
-        // repeat-rate 50
+        repeat-delay 250
+        repeat-rate 40
         track-layout "global"
     }
 
@@ -37,7 +38,7 @@ input {
     }
 
     disable-power-key-handling
-    focus-follows-mouse max-scroll-amount="0%"
+    focus-follows-mouse max-scroll-amount="20%"
 }
 
 
@@ -53,7 +54,7 @@ output "eDP-1" {
 
 
 layout {
-	gaps 5
+	gaps 4
 	center-focused-column "never"
 
 	preset-column-widths {
@@ -70,12 +71,16 @@ layout {
 }
 
 window-rule {
-  geometry-corner-radius 8
+  geometry-corner-radius 4
   clip-to-geometry true
 }
 
+window-rule {
+	match app-id="floating"
+	open-floating true
+}
+
 debug {
-  // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
 }
 
@@ -86,31 +91,31 @@ binds {
     Mod+Q hotkey-overlay-title=null { close-window; }
 
     Mod+Return { spawn "kitty"; }
-    Mod+W { spawn "helium"; }
-	Mod+E { spawn "dolphin"; }
+    Mod+W { spawn "zen-browser"; }
+	Mod+E { spawn "thunar"; }
 
     Mod+Left { focus-column-left; }
-	Mod+M { spawn "kitty" "-e" "rmpc";  }
+	Mod+M { spawn "kitty" "--app-id" "floating" "-e" "rmpc";  }
     Mod+Right { focus-column-right; }
 
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
 
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-	XF86AudioMute allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_SINK@" "5%-"; }
+	XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_SINK@" "toggle"; }
 
-    XF86AudioPlay allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "playPause"; }
-    XF86AudioNext allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "next"; }
-    XF86AudioPrev allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "previous"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "plauerctl" "previous"; }
 
-    XF86MonBrightnessUp { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "set" "5%+"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "set" "5%-"; }
 
-    Mod+L {spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Mod+L {spawn "hyprlock"; }
+    Mod+Space { spawn "anyrun"; }
+    Mod+V { spawn "kitty" "--app-id" "floating" "-e" "clipse"  ; }
 
 	Mod+Tab repeat=true {toggle-overview;}
 

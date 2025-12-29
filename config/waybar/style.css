@@ -1,1 +1,102 @@
+@import "colors.css";
 
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "ITC Avant Garde Gothic", "JetBrainsMono NFM", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @on_background;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+#clock,
+#tray,
+#pulseaudio,
+#battery {
+    padding: 0 4px;
+}
+
+#workspaces button{ 
+    background-color: transparent;
+    color: @on_surface;
+}
+
+#workspaces button:hover {
+    background-color: @surface_variant;
+    color: @on_surface;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#workspaces button.urgent {
+    background-color: transparent;
+    color: @error;
+}
+
+/* Clock */
+#clock {
+    color: @on_background;
+}
+
+/* Tray */
+#tray {
+    background-color: transparent;
+}
+
+/* Pulseaudio (Volume) */
+#pulseaudio {
+    color: @on_background;
+}
+
+#pulseaudio.muted {
+    color: @on_surface_variant;
+}
+
+/* Battery */
+#battery {
+    color: @on_background;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @primary;
+}
+
+#battery.warning:not(.charging) {
+    color: @tertiary;
+}
+
+#battery.critical:not(.charging) {
+    color: @error;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        color: @on_error;
+    }
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @surface_container_highest;
+    color: @on_surface;
+    border: 1px solid @outline_variant;
+}
+
+tooltip label {
+    color: @on_surface;
+}
