@@ -1,0 +1,24 @@
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+# History: larger, shared, and timestamped.
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
+HISTCONTROL=ignoredups:erasedups
+HISTIGNORE='&:ls:[bf]g:exit'
+
+shopt -s histappend
+
+# Share history between sessions.
+if [ -z "$PROMPT_COMMAND" ]; then
+  PROMPT_COMMAND='history -a; history -n'
+else
+  PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+fi
+
+# Prefix search with up/down arrows.
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'

@@ -1,0 +1,15 @@
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+# Allow interactive errors without exiting.
+set +o errexit
+
+path_append() {
+  [ -n "$1" ] || return 1
+  case ":$PATH:" in
+    *":$1:"*) return 0 ;;
+    *) PATH="$PATH:$1" ;;
+  esac
+}

@@ -1,0 +1,12 @@
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+# Ble.sh
+if [ -r /usr/share/blesh/ble.sh ]; then
+	source /usr/share/blesh/ble.sh
+fi
+
+
+[[ ! ${BLE_VERSION-} ]] || ble-attach

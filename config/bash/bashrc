@@ -1,0 +1,15 @@
+
+# Load additive bash configs from XDG config dir.
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+_bash_rc_dir="$XDG_CONFIG_HOME/bash/rc.d"
+if [ -d "$_bash_rc_dir" ]; then
+  _bash_rc_glob_was_set=0
+  shopt -q nullglob || { shopt -s nullglob; _bash_rc_glob_was_set=1; }
+  for _bash_rc_file in "$_bash_rc_dir"/[0-9][0-9]_*; do
+    [ -f "$_bash_rc_file" ] && . "$_bash_rc_file"
+  done
+  [ "$_bash_rc_glob_was_set" -eq 1 ] && shopt -u nullglob
+  unset _bash_rc_glob_was_set
+  unset _bash_rc_file
+fi
+unset _bash_rc_dir

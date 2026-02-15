@@ -1,0 +1,18 @@
+
+
+# uncomment to enable tmux
+return
+
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+command -v tmux >/dev/null 2>&1 || return
+
+# Auto-start tmux on interactive login shells.
+if [ -z "$TMUX" ] && [ -z "$SSH_CONNECTION" ] && [ -z "$SSH_TTY" ]; then
+  if shopt -q login_shell; then
+    tmux attach 2>/dev/null || tmux new
+  fi
+fi

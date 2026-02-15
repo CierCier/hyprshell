@@ -1,0 +1,46 @@
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+_prompt_cmd_start() {
+  [ "$_prompt_in_prompt" = "1" ] && return
+  local cmd=${BASH_COMMAND%% *}
+  [ -n "$cmd" ] || return
+  case "$(type -t "$cmd" 2>/dev/null)" in
+    builtin|keyword|function|alias) return ;;
+  esac
+  _prompt_cmd_start_time=$SECONDS
+}
+
+_prompt_set() {
+  _prompt_in_prompt=1
+  local exit_code=$?
+  local duration="-"
+  if [ -n "$_prompt_cmd_start_time" ]; then
+    duration=$((SECONDS - _prompt_cmd_start_time))s
+  fi
+
+  local c_reset='\[\e[0m\]'
+  local c_red='\[\e[31m\]'
+  local c_green='\[\e[32m\]'
+  local c_yellow='\[\e[33m\]'
+  local c_cyan='\[\e[36m\]'
+
+  local status=""
+  if [ "$exit_code" -ne 0 ]; then
+    status=" ${c_red}${exit_code}${c_reset}"
+  fi
+
+  PS1="${c_yellow}${duration}${c_reset} ${c_cyan}\\w${c_reset}${status} > "
+  _prompt_cmd_start_time=
+  _prompt_in_prompt=0
+}
+
+trap '_prompt_cmd_start' DEBUG
+
+if [ -z "$PROMPT_COMMAND" ]; then
+  PROMPT_COMMAND="_prompt_set"
+else
+  PROMPT_COMMAND="_prompt_set; $PROMPT_COMMAND"
+fi
