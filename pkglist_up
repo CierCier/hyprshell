@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+out_dir="$repo_dir/pkglist"
+
+mkdir -p -- "$out_dir"
+
+if ! command -v pacman >/dev/null 2>&1; then
+  printf 'Error: pacman not found\n' >&2
+  exit 1
+fi
+
+if ! command -v paru >/dev/null 2>&1; then
+  printf 'Error: paru not found\n' >&2
+  exit 1
+fi
+
+pacman -Qqn | sort -u >"$out_dir/base.txt"
+pacman -Qqm | sort -u >"$out_dir/aur.txt"
+
+printf 'Wrote %s\n' "$out_dir/base.txt"
+printf 'Wrote %s\n' "$out_dir/aur.txt"

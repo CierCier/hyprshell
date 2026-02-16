@@ -1,0 +1,11 @@
+android-sdk-platform-tools
+blesh
+clipse
+grimblast-git
+noctalia-shell
+noto-fonts-cjk-vf
+paru
+quickshell-git
+rose-pine-cursor
+ttf-twemoji-color
+zen-browser-bin
