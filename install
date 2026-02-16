@@ -1,153 +1,269 @@
-#! /usr/bin/env sh
+#!/usr/bin/env bash
+set -euo pipefail
 
+REPO_URL="https://github.com/CierCier/hyprshell"
 
+bold() { printf '\033[1m%s\033[0m\n' "$*"; }
+say() { printf '%s\n' "$*"; }
+die() { printf 'Error: %s\n' "$*" >&2; exit 1; }
 
-if [ -z $1 ]; then
-    git_url="https://github.com/CierCier/hyprshell.git"
-else
-    git_url=$1
+prompt() {
+  local message="$1" default="$2" reply
+  if [ -n "$default" ]; then
+    read -r -p "$message [$default] " reply || true
+    printf '%s' "${reply:-$default}"
+  else
+    read -r -p "$message " reply || true
+    printf '%s' "$reply"
+  fi
+}
+
+normalize_yes_no() {
+  case "${1,,}" in
+    y|yes) printf 'yes' ;;
+    n|no) printf 'no' ;;
+    *) printf '' ;;
+  esac
+}
+
+safe_remove() {
+  local target="$1"
+  [ -n "$target" ] || die "Refusing to remove empty path"
+  [ "$target" != "/" ] || die "Refusing to remove /"
+  run_with_perm "$target" rm -rf -- "$target"
+}
+
+needs_root() {
+  local path="$1" check
+  if [ -e "$path" ] || [ -L "$path" ]; then
+    [ -w "$path" ] && return 1
+    return 0
+  fi
+  check="$(dirname "$path")"
+  [ -w "$check" ] && return 1
+  return 0
+}
+
+run_with_perm() {
+  local path="$1"
+  shift
+  if needs_root "$path"; then
+    command -v sudo >/dev/null 2>&1 || die "Need sudo to write $path"
+    sudo "$@"
+  else
+    "$@"
+  fi
+}
+
+resolve_repo_dir() {
+  local source="${BASH_SOURCE[0]:-}"
+  if [ -n "$source" ] && [ -e "$source" ]; then
+    (cd "$(dirname "$source")" && pwd)
+    return 0
+  fi
+  printf ''
+}
+
+clone_and_reexec() {
+  command -v git >/dev/null 2>&1 || die "git is required to clone the repo"
+  local default_dir="$HOME/.dots"
+  local target_dir
+  target_dir="$(prompt "Clone repo to" "$default_dir")"
+  [ -n "$target_dir" ] || die "Missing target directory"
+
+  if [ -e "$target_dir" ] && [ ! -d "$target_dir" ]; then
+    die "Target exists and is not a directory: $target_dir"
+  fi
+
+  if [ -d "$target_dir/.git" ]; then
+    say "Using existing repo at $target_dir"
+  else
+    if [ -d "$target_dir" ] && [ "$(ls -A "$target_dir" 2>/dev/null)" ]; then
+      local choice
+      choice="$(prompt "Directory not empty. Use anyway? (y/n)" "n")"
+      choice="$(normalize_yes_no "$choice")"
+      [ "$choice" = "yes" ] || die "Aborted by user"
+    fi
+    git clone "$REPO_URL" "$target_dir"
+  fi
+
+  bold "Re-running installer from cloned repo"
+  INSTALLING_FROM_CLONE=1 bash "$target_dir/install"
+  exit 0
+}
+
+repo_dir=""
+if [ "${INSTALLING_FROM_CLONE:-}" != "1" ]; then
+  repo_dir="$(resolve_repo_dir)"
+  if [ -n "$repo_dir" ] && [ -d "$repo_dir/.git" ] && [ -d "$repo_dir/config" ]; then
+    :
+  else
+    repo_dir=""
+  fi
 fi
 
-install_paru(){
-    if ! command -v paru >/dev/null 2>&1; then
-        echo "Installing paru..."
-        sudo pacman -S --noconfirm base-devel git rustup
-        rustup default nightly
-        git clone https://aur.archlinux.org/paru.git
-        cd paru || exit
-        makepkg -si --noconfirm
-        cd .. || exit
-        rm -rf paru
-    else
-        echo "paru is already installed."
-    fi
-}
-
-
-find_aur_helper(){
-    if command -v paru >/dev/null 2>&1; then
-        echo "paru"
-    elif command -v yay >/dev/null 2>&1; then
-        echo "yay"
-    else
-        install_paru
-        echo "paru"
-    fi
-}
-
-AURHELPER=$(find_aur_helper)
-
-ensure_pkg(){
-    if [ -z "$($AURHELPER -Q "$1" 2>/dev/null)" ]; then
-        echo "Installing $1..."
-        $AURHELPER -S --noconfirm "$1"
-    else
-        echo "$1 is already installed."
-    fi
-}
-
-
-PKGLIST=(
-    "adw-gtk-theme"
-    "blueberry"
-    "bluez-utils"
-    "breezex-cursor-theme"
-    "brightnessctl"
-    "cliphist"
-    "btop"
-    "ddcutil"
-    "dart-sass"
-    "fastfetch"
-    "fd"
-    "fuzzel"
-    "grimblast-git"
-    "gst-plugin-pipewire"
-    "gst-plugins-bad"
-    "gst-plugins-good"
-    "gst-plugins-ugly"
-    "gvfs"
-    "hyprland"
-    "hypridle"
-    "hyprlock"
-    "hyprpicker"
-    "hyprpolkitagent"
-    "imagemagick"
-    "imv"
-    "imd"
-    "kitty"
-    "less"
-    "kvantum"
-    "kvantum-theme-fluent-git"
-    "neovim"
-    "network-manager-applet"
-    "networkmanager"
-    "ntfs-3g"
-    "nwg-look"
-    "pamixer"
-    "pipewire"
-    "pipewire-alsa"
-    "pipewire-jack"
-    "pipewire-pulse"
-    "plymouth"
-    "power-profiles-daemon"
-    "python-materialyoucolor-git"
-    "python-rich"
-    "qt5-wayland"
-    "qt5ct"
-    "qt6-wayland"
-    "qt6ct"
-    "quickshell"
-    "rofi-wayland"
-    "rofi-dmenu"
-    "swww"
-    "thunar"
-    "thunar-archive-plugin"
-    "thunar-volman"
-    
-    "ttf-imb-plex"
-    "ttf-jetbrains-mono-nerd"
-    "ttf-material-symbols-variable-git"
-    "tumbler"
-    "uwsm"
-    "wallust"
-    "wget"
-    "wireplumber"
-    "xarchiver"
-    "xdg-desktop-portal-hyprland"
-    "xfce4-settings"
-)
-
-
-ALL_PKGS=$(echo "${PKGLIST[@]}")
-
-$AURHELPER -S --noconfirm $ALL_PKGS
-
-#clone repo
-ensure_pkg git
-
-git clone --recursive "$git_url" $HOME/.hyprshell
-if [ $? -ne 0 ]; then
-    echo "Failed to clone repository. Please check the URL or your internet connection."
-    exit 1
+if [ -z "$repo_dir" ]; then
+  bold "Installer is running without a local checkout"
+  clone_and_reexec
 fi
 
-cd $HOME/.hyprshell || exit
+bold "Hyprshell installer"
 
-configs=$(/bin/ls -A1 config)
-for config in $configs; do
-    if [ -d "$HOME/.config/$config" ]; then
-        mv "$HOME/.config/$config" "$HOME/.config/${config}.bak"
-    fi
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+XDG_BIN_HOME="${XDG_BIN_HOME:-$HOME/.local/bin}"
 
-    ln -s "$HOME/.hyprshell/config/$config" "$HOME/.config/$config"
+conflict_choice=""
+while [ -z "$conflict_choice" ]; do
+  say "Conflict handling:"
+  say "  1) Backup existing files"
+  say "  2) Overwrite existing files"
+  say "  3) Skip existing files"
+  case "$(prompt "Choose" "1")" in
+    1) conflict_choice="backup" ;;
+    2) conflict_choice="overwrite" ;;
+    3) conflict_choice="skip" ;;
+    *) say "Invalid choice" ;;
+  esac
 done
 
+link_item() {
+  local src="$1" dest="$2"
+  if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+    say "Already linked: $dest"
+    return 0
+  fi
 
-mkdir -p "$HOME/.cache/shell"
-mkdir -p "$HOME/.cache/colorscheme"
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    case "$conflict_choice" in
+      backup)
+        local ts backup
+        ts="$(date +%Y%m%d%H%M%S)"
+        backup="${dest}.bak.${ts}"
+        say "Backing up $dest -> $backup"
+        mv -- "$dest" "$backup"
+        ;;
+      overwrite)
+        say "Removing existing $dest"
+        safe_remove "$dest"
+        ;;
+      skip)
+        say "Skipping existing $dest"
+        return 0
+        ;;
+    esac
+  fi
 
-mv "$HOME/.local/bin" "$HOME/.local/bin.bak" 2>/dev/null
-ln -s "$HOME/.hyprshell/local/bin/" "$HOME/.local/bin"
+  run_with_perm "$dest" ln -s -- "$src" "$dest"
+  say "Linked $dest"
+}
 
+copy_item() {
+  local src="$1" dest="$2"
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    case "$conflict_choice" in
+      backup)
+        local ts backup
+        ts="$(date +%Y%m%d%H%M%S)"
+        backup="${dest}.bak.${ts}"
+        say "Backing up $dest -> $backup"
+        run_with_perm "$dest" mv -- "$dest" "$backup"
+        ;;
+      overwrite)
+        say "Removing existing $dest"
+        safe_remove "$dest"
+        ;;
+      skip)
+        say "Skipping existing $dest"
+        return 0
+        ;;
+    esac
+  fi
 
-$HOME/.local/bin/wallpaper $HOME/.hyprshell/wallpaper/Breakthrough.png
+  run_with_perm "$(dirname "$dest")" mkdir -p -- "$(dirname "$dest")"
+  run_with_perm "$dest" cp -a -- "$src" "$dest"
+  say "Copied $dest"
+}
+
+install_configs=""
+while [ -z "$install_configs" ]; do
+  install_configs="$(normalize_yes_no "$(prompt "Install config/* to $XDG_CONFIG_HOME? (y/n)" "y")")"
+done
+
+install_bins=""
+while [ -z "$install_bins" ]; do
+  install_bins="$(normalize_yes_no "$(prompt "Install local/bin/* to $XDG_BIN_HOME? (y/n)" "y")")"
+done
+
+install_vendor=""
+while [ -z "$install_vendor" ]; do
+  install_vendor="$(normalize_yes_no "$(prompt "Install vendor assets (copied)? (y/n)" "y")")"
+done
+
+if [ "$install_configs" = "yes" ]; then
+  mkdir -p -- "$XDG_CONFIG_HOME"
+  for src in "$repo_dir"/config/*; do
+    [ -e "$src" ] || continue
+    link_item "$src" "$XDG_CONFIG_HOME/$(basename "$src")"
+  done
+fi
+
+if [ "$install_bins" = "yes" ]; then
+  mkdir -p -- "$XDG_BIN_HOME"
+  for src in "$repo_dir"/local/bin/*; do
+    [ -e "$src" ] || continue
+    link_item "$src" "$XDG_BIN_HOME/$(basename "$src")"
+  done
+fi
+
+if [ "$install_vendor" = "yes" ]; then
+  install_fonts=""
+  while [ -z "$install_fonts" ]; do
+    install_fonts="$(normalize_yes_no "$(prompt "Install vendor fonts? (y/n)" "y")")"
+  done
+  if [ "$install_fonts" = "yes" ]; then
+    fonts_dir="$(prompt "Fonts destination" "/usr/share/fonts/TTF")"
+    for src in "$repo_dir"/vendor/fonts/*; do
+      [ -e "$src" ] || continue
+      copy_item "$src" "$fonts_dir/$(basename "$src")"
+    done
+  fi
+
+  install_plymouth=""
+  while [ -z "$install_plymouth" ]; do
+    install_plymouth="$(normalize_yes_no "$(prompt "Install Plymouth theme(s)? (y/n)" "y")")"
+  done
+  if [ "$install_plymouth" = "yes" ]; then
+    plymouth_dir="$(prompt "Plymouth themes destination" "/usr/share/plymouth/themes")"
+    for src in "$repo_dir"/vendor/plymouth/*; do
+      [ -e "$src" ] || continue
+      copy_item "$src" "$plymouth_dir/$(basename "$src")"
+    done
+  fi
+
+  install_sddm_theme=""
+  while [ -z "$install_sddm_theme" ]; do
+    install_sddm_theme="$(normalize_yes_no "$(prompt "Install SDDM theme? (y/n)" "y")")"
+  done
+  if [ "$install_sddm_theme" = "yes" ]; then
+    sddm_theme_dir="$(prompt "SDDM themes destination" "/usr/share/sddm/themes")"
+    if [ -d "$repo_dir/vendor/sddm/kristen" ]; then
+      copy_item "$repo_dir/vendor/sddm/kristen" "$sddm_theme_dir/kristen"
+    fi
+  fi
+
+  install_sddm_conf=""
+  while [ -z "$install_sddm_conf" ]; do
+    install_sddm_conf="$(normalize_yes_no "$(prompt "Install SDDM config file? (y/n)" "y")")"
+  done
+  if [ "$install_sddm_conf" = "yes" ] && [ -f "$repo_dir/vendor/sddm/sddm.conf" ]; then
+    sddm_conf_dest="$(prompt "SDDM config destination" "/etc/sddm.conf")"
+    copy_item "$repo_dir/vendor/sddm/sddm.conf" "$sddm_conf_dest"
+  fi
+
+  :
+fi
+
+bold "Done"
+say "Repo: $repo_dir"
+say "Config: $XDG_CONFIG_HOME"
+say "Bin: $XDG_BIN_HOME"
