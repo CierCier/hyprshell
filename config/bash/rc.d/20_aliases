@@ -3,11 +3,13 @@ case $- in
   *) return ;;
 esac
 
-# Preferred tools.
-command -v lsd >/dev/null 2>&1 && alias ls='lsd'
-command -v lsd >/dev/null 2>&1 && alias ll='lsd -l'
-command -v lsd >/dev/null 2>&1 && alias la='lsd -a'
-command -v lsd >/dev/null 2>&1 && alias lla='lsd -la'
-
+command -v lsd >/dev/null 2>&1 && alias ls='lsd -l --group-directories-first -h'
 command -v bat >/dev/null 2>&1 && alias cat='bat --plain --paging=never'
-command -v rg >/dev/null 2>&1 && alias grep='rg'
+command -v rg >/dev/null 2>&1 && alias grep='rg --color=auto'
+
+if command -v nvim > /dev/null; then
+	alias vi=nvim
+	alias vim=nvim
+fi
+
+

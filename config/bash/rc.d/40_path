@@ -3,7 +3,6 @@ case $- in
   *) return ;;
 esac
 
-# Allow interactive errors without exiting.
 set +o errexit
 
 path_append() {
@@ -13,3 +12,10 @@ path_append() {
     *) PATH="$PATH:$1" ;;
   esac
 }
+
+
+
+path_append ~/.local/bin
+path_append ~/.cargo/bin
+path_append ~/.bun/bin
+
