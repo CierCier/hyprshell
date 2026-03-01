@@ -20,5 +20,3 @@ source = ~/.config/hypr/conf/nominal.conf
 
 # Quickshell config uses end-4 's quickshell setup for a more feature-rich experience
 #source = ~/.config/hypr/conf/quickshell.conf
-
-source = ./dms/outputs.conf
