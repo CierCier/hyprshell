@@ -7,7 +7,18 @@ bold() { printf '\033[1m%s\033[0m\n' "$*"; }
 say() { printf '%s\n' "$*"; }
 die() { printf 'Error: %s\n' "$*" >&2; exit 1; }
 
+AUTO_YES=0
+for arg in "$@"; do
+  if [ "$arg" = "--yes" ]; then
+    AUTO_YES=1
+  fi
+done
+
 prompt() {
+  if [ "$AUTO_YES" = "1" ]; then
+    printf '%s' "${2:-}"
+    return 0
+  fi
   local message="$1" default="$2" reply
   if [ -n "$default" ]; then
     read -r -p "$message [$default] " reply || true
@@ -88,7 +99,9 @@ clone_and_reexec() {
   fi
 
   bold "Re-running installer from cloned repo"
-  INSTALLING_FROM_CLONE=1 bash "$target_dir/install"
+  local cmd=(bash "$target_dir/install")
+  if [ "$AUTO_YES" = "1" ]; then cmd+=(--yes); fi
+  INSTALLING_FROM_CLONE=1 "${cmd[@]}"
   exit 0
 }
 
@@ -113,6 +126,10 @@ XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 XDG_BIN_HOME="${XDG_BIN_HOME:-$HOME/.local/bin}"
 
 conflict_choice=""
+if [ "$AUTO_YES" = "1" ]; then
+  conflict_choice="overwrite"
+fi
+
 while [ -z "$conflict_choice" ]; do
   say "Conflict handling:"
   say "  1) Backup existing files"
