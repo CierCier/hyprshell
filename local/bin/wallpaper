@@ -45,11 +45,11 @@ def generate_thumbnail(video):
     return thumb_path
 
 
-def use_swww(img_path, resize):
+def use_awww(img_path, resize):
     subprocess.run(["pkill", "mpvpaper"])
     no_stdout(
         [
-            "swww",
+            "awww",
             "img",
             "--filter",
             "Lanczos3",
@@ -184,7 +184,7 @@ def main():
 
     if file_type.startswith("image/"):
         generate_colors(img_path, mode=args.theme)
-        use_swww(img_path, resize)
+        use_awww(img_path, resize)
     elif file_type.startswith("video/"):
         thumb = generate_thumbnail(img_path)
         generate_colors(thumb)

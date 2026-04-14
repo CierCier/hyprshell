@@ -3,71 +3,80 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "ITC Avant Garde Gothic", "JetBrainsMono NFM", sans-serif;
+    font-family: "JetBrainsMono NFM", "Roboto", sans-serif;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: @background;
-    color: @on_background;
-    transition-property: background-color;
-    transition-duration: 0.3s;
+    background-color: @surface;
+    color: @on_surface;
+    border-bottom: 1px solid @outline_variant;
 }
 
-#clock,
-#tray,
-#pulseaudio,
-#battery {
+/* Modules container */
+.modules-left,
+.modules-center,
+.modules-right {
     padding: 0 4px;
 }
 
-#workspaces button{ 
+/* Left side: Workspaces */
+#workspaces {
     background-color: transparent;
-    color: @on_surface;
+    padding: 2px 8px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: @on_surface_variant;
+    border-radius: 12px;
+    margin: 2px 2px;
+    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button:hover {
-    background-color: @surface_variant;
+    background-color: @surface_container_high;
     color: @on_surface;
-    box-shadow: none;
-    text-shadow: none;
 }
 
-#workspaces button.active,
-#workspaces button.focused {
-    background-color: @primary;
-    color: @on_primary;
+#workspaces button.active {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    min-width: 32px;
 }
 
 #workspaces button.urgent {
-    background-color: transparent;
-    color: @error;
+    background-color: @error_container;
+    color: @on_error_container;
 }
 
-/* Clock */
+/* Center: Clock */
 #clock {
-    color: @on_background;
+    color: @on_surface;
+    padding: 0 14px;
 }
 
-/* Tray */
-#tray {
-    background-color: transparent;
+/* Right side: Control Center */
+#tray,
+#network,
+#battery,
+#backlight,
+#custom-power {
+    color: @on_surface;
+    padding: 0 12px;
+    margin: 4px 0;
+    border-radius: 12px;
 }
 
-/* Pulseaudio (Volume) */
-#pulseaudio {
-    color: @on_background;
+/* Specific module highlights */
+#network {
+    color: @secondary;
 }
 
-#pulseaudio.muted {
-    color: @on_surface_variant;
-}
-
-/* Battery */
 #battery {
-    color: @on_background;
+    color: @tertiary;
 }
 
 #battery.charging,
@@ -75,28 +84,32 @@ window#waybar {
     color: @primary;
 }
 
-#battery.warning:not(.charging) {
-    color: @tertiary;
-}
-
 #battery.critical:not(.charging) {
     color: @error;
-    animation: blink 0.5s linear infinite alternate;
 }
 
-@keyframes blink {
-    to {
-        color: @on_error;
-    }
+#backlight {
+    color: @primary;
+}
+
+#custom-power {
+    color: @error;
+    padding-right: 16px;
+}
+
+#tray {
+    padding: 0 10px;
 }
 
 /* Tooltip */
 tooltip {
     background-color: @surface_container_highest;
     color: @on_surface;
+    border-radius: 8px;
     border: 1px solid @outline_variant;
 }
 
 tooltip label {
+    padding: 4px;
     color: @on_surface;
 }

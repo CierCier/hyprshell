@@ -1,60 +1,78 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 20,
-  "margin-top": 4,
-  "spacing": 4,
+  "height": 32,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
   "modules-left": [
-	  // Be real, you dont really want a ws indicator in niri
-	  // "niri/workspaces",
-	  "cpu",
-	  "memory"
+    "hyprland/workspaces"
   ],
-  "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "battery"],
-  
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "battery",
+    "backlight",
+    "custom/power"
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-  },
-  "niri/workspaces": {},
-  "cpu" : {
-	"format": "{icon} {load}@{avg_frequency}GHz",
-	"interval": 1
-  },
-  "memory": {
-	  "format": "{used}GB"
+    "format": "{name}",
+    "on-click": "activate"
   },
   "clock": {
     "format": "{:%H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%a %d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#a8d292'><b>{}</b></span>",
+        "days": "<span color='#e1e4da'><b>{}</b></span>",
+        "weeks": "<span color='#a0cfd0'><b>W{}</b></span>",
+        "weekdays": "<span color='#bccbb0'><b>{}</b></span>",
+        "today": "<span color='#ffb4ab'><b><u>{}</u></b></span>"
+      }
+    }
   },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-muted": "󰖁 {icon}",
-    "format-icons": {
-      "headphone": "󰋋",
-      "hands-free": "󰋎",
-      "headset": "󰋎",
-      "phone": "󰏲",
-      "portable": "󰏲",
-      "car": "󰄉",
-      "default": ["󰕿", "󰖀", "󰕾"],
-    },
-    "on-click": "pavucontrol",
+  "network": {
+    "format-wifi": "󰖩",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{essid} ({signalStrength}%)"
   },
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% 󰂄",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format": "{icon}",
+    "format-charging": "󰂄",
+    "format-plugged": "󰂄",
+    "format-alt": "{capacity}% {icon}",
+    "format-icons": ["󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "min-length": 2
   },
   "tray": {
-    "spacing": 10,
+    "icon-size": 14,
+    "spacing": 8
   },
+  "custom/power": {
+    "format": "󰐥",
+    "on-click": "wlogout",
+    "tooltip": false
+  }
 }
