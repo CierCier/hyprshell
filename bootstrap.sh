@@ -26,7 +26,6 @@ $SUDO pacman -Syu --noconfirm --needed git base-devel
 if ! command -v paru >/dev/null 2>&1; then
     bold "2. Installing paru (AUR helper)..."
     TEMP_DIR=$(mktemp -d)
-    # paru-bin is faster to install as it doesn't require rust to build
     git clone https://aur.archlinux.org/paru-bin.git "$TEMP_DIR"
     (cd "$TEMP_DIR" && makepkg -si --noconfirm)
     rm -rf "$TEMP_DIR"
@@ -43,14 +42,11 @@ fi
 
 # 4. Install packages from pkglist
 bold "4. Installing packages from pkglist..."
-# Pacman packages
 if [ -f "$DOTS_DIR/pkglist/base.txt" ]; then
     say "Installing base packages..."
-    # Filter out comments and empty lines, then install
     grep -v '^#' "$DOTS_DIR/pkglist/base.txt" | xargs $SUDO pacman -S --needed --noconfirm
 fi
 
-# AUR packages
 if [ -f "$DOTS_DIR/pkglist/aur.txt" ]; then
     say "Installing AUR packages..."
     grep -v '^#' "$DOTS_DIR/pkglist/aur.txt" | xargs paru -S --needed --noconfirm
@@ -60,28 +56,77 @@ fi
 bold "5. Running dotfiles installer..."
 bash "$DOTS_DIR/install" --yes
 
-# 6. System configurations
-bold "6. Finalizing system configurations..."
+# 6. Networking configurations (IWD + systemd-networkd)
+bold "6. Configuring networking (IWD for WiFi, systemd-networkd for Ethernet)..."
 
-# Enable services
-say "Enabling system services..."
+# Create systemd-networkd config for Ethernet
+$SUDO mkdir -p /etc/systemd/network
+say "Configuring wired ethernet (DHCP)..."
+$SUDO tee /etc/systemd/network/20-wired.network > /dev/null <<EOF
+[Match]
+Name=en*
+Name=eth*
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCPv4]
+RouteMetric=10
+EOF
+
+# Create systemd-networkd config for Wireless (via IWD)
+say "Configuring wireless (via iwd)..."
+$SUDO tee /etc/systemd/network/25-wireless.network > /dev/null <<EOF
+[Match]
+Name=wlan*
+Name=wlp*
+
+[Network]
+DHCP=yes
+IPv6PrivacyExtensions=yes
+
+[DHCPv4]
+RouteMetric=20
+EOF
+
+# Configure IWD to use its own internal network configuration or let networkd handle it
+# If we use systemd-networkd, we should tell IWD to NOT do its own DHCP.
+$SUDO mkdir -p /etc/iwd
+$SUDO tee /etc/iwd/main.conf > /dev/null <<EOF
+[General]
+EnableNetworkConfiguration=false
+
+[Network]
+NameResolvingService=systemd
+EOF
+
+# 7. System configurations & Services
+bold "7. Finalizing system configurations and enabling services..."
+
+# Disable NetworkManager if it was installed (to avoid conflicts)
+$SUDO systemctl disable NetworkManager.service || true
+$SUDO systemctl stop NetworkManager.service || true
+
+# Enable new networking stack
+$SUDO systemctl enable iwd.service
+$SUDO systemctl enable systemd-networkd.service
+$SUDO systemctl enable systemd-resolved.service
+
+# Setup symlink for resolved
+$SUDO ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+# Other services
 $SUDO systemctl enable sddm.service || true
-$SUDO systemctl enable NetworkManager.service || true
 $SUDO systemctl enable bluetooth.service || true
 $SUDO systemctl enable fstrim.timer || true
 
-# Copy kernel cmdline configs if they exist
+# Copy kernel cmdline configs
 if [ -d "$DOTS_DIR/vendor/kernel_cmdline" ]; then
     bold "Copying kernel cmdline configs to /etc/cmdline.d/..."
     $SUDO mkdir -p /etc/cmdline.d/
     $SUDO cp "$DOTS_DIR"/vendor/kernel_cmdline/*.conf /etc/cmdline.d/ || true
 fi
 
-# Add any custom udev rules or etc configs here if they are ever added to the repo
-# For example:
-# if [ -f "$DOTS_DIR/etc/99-custom.rules" ]; then
-#     $SUDO cp "$DOTS_DIR/etc/99-custom.rules" /etc/udev/rules.d/
-# fi
-
 bold "Bootstrap complete! If you are in a chroot, exit and reboot."
-bold "If you are in a live system, just reboot."
+bold "Note: Use 'iwctl' to connect to WiFi after rebooting."
