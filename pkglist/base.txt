@@ -1574,6 +1574,8 @@ ttf-opensans
 ttf-roboto
 ttf-roboto-mono
 twolame
+typescript
+typescript-language-server
 tzdata
 uchardet
 udisks2

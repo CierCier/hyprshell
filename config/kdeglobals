@@ -158,9 +158,6 @@ Sort reversed=false
 Speedbar Width=165
 View Style=DetailTree
 
-[UiSettings]
-ColorScheme=qt6ct
-
 [WM]
 activeBackground=227,229,231
 activeBlend=227,229,231
