@@ -28,6 +28,7 @@ Item {
     readonly property alias password: password
     readonly property alias loginButton: loginButton
     readonly property alias loginContainer: loginContainer
+    readonly property alias loginLayout: formColumn
 
     property bool showKeyboard: !Config.virtualKeyboardStartHidden
     property bool foundUsers: userModel.count > 0
@@ -51,7 +52,6 @@ Item {
     function login() {
         var user = foundUsers ? userName : userInput.text;
         if (user && user !== "") {
-            safeStateChange("authenticating");
             sddm.login(user, password.text, sessionIndex);
         } else {
             loginMessage.warn(textConstants.promptUser || "Enter your user!", "error");
@@ -66,7 +66,6 @@ Item {
         }
 
         function onLoginFailed() {
-            safeStateChange("normal");
             loginMessage.warn(textConstants.loginFailed || "Login failed", "error");
             password.text = "";
         }
@@ -77,7 +76,7 @@ Item {
     }
 
     function updateCapsLock() {
-        if (root.capsLockOn && loginScreen.state !== "authenticating") {
+        if (root.capsLockOn) {
             loginMessage.warn(textConstants.capslockWarning || "Caps Lock is on", "warning");
         } else {
             loginMessage.clear();
@@ -252,6 +251,19 @@ Item {
                     }
                 }
 
+                BlurCard {
+                    id: avatarBlurCard
+                    source: slideshowShaderSource
+                    isCircular: true
+                    width: userSelector.width + 12 * Config.generalScale
+                    height: userSelector.height + 12 * Config.generalScale
+                    anchors.centerIn: userSelector
+                    visible: userSelector.visible
+                    blurAmount: 80 * Config.generalScale
+                    brightness: 0.1
+                    z: -1
+                }
+
                 UserSelector {
                     id: userSelector
                     visible: loginScreen.foundUsers
@@ -259,7 +271,7 @@ Item {
                     height: Config.avatarActiveSize * Config.generalScale
                     anchors.horizontalCenter: parent.horizontalCenter
                     listUsers: loginScreen.isSelectingUser
-                    enabled: loginScreen.state !== "authenticating"
+                    enabled: true
                     orientation: "horizontal"
                     activeFocusOnTab: true
 
@@ -283,13 +295,25 @@ Item {
                     }
                 }
 
+                BlurCard {
+                    id: formBlurCard
+                    source: slideshowShaderSource
+                    width: formColumn.width + 24 * Config.generalScale
+                    height: formColumn.height + 24 * Config.generalScale
+                    anchors.centerIn: formColumn
+                    borderRadius: 18 * Config.generalScale
+                    blurAmount: 80 * Config.generalScale
+                    brightness: 0.1
+                    z: -1
+                }
+
                 Column {
                     id: formColumn
                     width: Config.passwordInputWidth * Config.generalScale + (loginButton.visible ? Config.passwordInputHeight * Config.generalScale + Config.loginButtonMarginLeft : 0)
                     spacing: 12 * Config.generalScale
                     anchors {
                         top: userSelector.visible ? userSelector.bottom : parent.top
-                        topMargin: userSelector.visible ? 18 * Config.generalScale : 0
+                        topMargin: userSelector.visible ? 64 * Config.generalScale : 0
                         horizontalCenter: parent.horizontalCenter
                     }
 
@@ -322,7 +346,7 @@ Item {
                         placeholder: (textConstants && textConstants.userName) ? textConstants.userName : "Username"
                         isPassword: false
                         splitBorderRadius: false
-                        enabled: loginScreen.state !== "authenticating"
+                        enabled: true
                         x: (parent.width - width) / 2
 
                         onAccepted: {
@@ -354,7 +378,7 @@ Item {
                         IconButton {
                             id: loginButton
                             visible: !Config.loginButtonHideIfNotNeeded || !loginScreen.userNeedsPassword
-                            enabled: loginScreen.state !== "selectingUser" && loginScreen.state !== "authenticating"
+                            enabled: loginScreen.state !== "selectingUser"
                             activeFocusOnTab: true
                             icon: Config.getIcon(Config.loginButtonIcon)
                             label: textConstants.login ? textConstants.login : "Login"
@@ -383,18 +407,12 @@ Item {
                         }
                     }
 
-                    Spinner {
-                        id: spinner
-                        visible: loginScreen.state === "authenticating"
-                        opacity: visible ? 1.0 : 0.0
-                        x: (parent.width - width) / 2
-                    }
 
                     Text {
                         id: loginMessage
                         property bool capslockWarning: false
                         width: Config.passwordInputWidth * Config.generalScale
-                        visible: text !== "" && loginScreen.state !== "authenticating" && (capslockWarning ? loginScreen.userNeedsPassword : true)
+                        visible: text !== "" && (capslockWarning ? loginScreen.userNeedsPassword : true)
                         opacity: visible ? 1.0 : 0.0
                         wrapMode: Text.Wrap
                         horizontalAlignment: Text.AlignHCenter
@@ -443,6 +461,17 @@ Item {
                 width: 400 * Config.generalScale
                 height: Config.menuAreaButtonsSize * Config.generalScale
 
+                BlurCard {
+                    id: footerBlurCard
+                    source: slideshowShaderSource
+                    anchors.fill: parent
+                    anchors.margins: -14 * Config.generalScale
+                    borderRadius: 14 * Config.generalScale
+                    blurAmount: 80 * Config.generalScale
+                    brightness: 0.1
+                    z: -1
+                }
+
                 MenuArea {
                     anchors.fill: parent
                 }
@@ -454,10 +483,6 @@ Item {
 
     Keys.onPressed: function(event) {
         if (event.key === Qt.Key_Escape) {
-            if (loginScreen.state === "authenticating") {
-                event.accepted = false;
-                return;
-            }
             if (Config.lockScreenDisplay)
                 loginScreen.close();
             password.text = "";

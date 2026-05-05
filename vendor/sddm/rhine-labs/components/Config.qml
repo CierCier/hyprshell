@@ -15,16 +15,16 @@ QtObject {
 
     // [LockScreen]
     property bool lockScreenDisplay: config['LockScreen/display'] === "false" ? false : true // @desc:Whether or not to display the lock screen. If false, the theme will load straight to the login screen.
-    property int lockScreenPaddingTop: config.intValue("LockScreen/padding-top") // @desc:Top padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
-    property int lockScreenPaddingRight: config.intValue("LockScreen/padding-right") // @desc:Right padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
-    property int lockScreenPaddingBottom: config.intValue("LockScreen/padding-bottom") // @desc:Bottom padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
-    property int lockScreenPaddingLeft: config.intValue("LockScreen/padding-left") // @desc:Left padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
+    property int lockScreenPaddingTop: config.intValue("LockScreen/padding-top") || 0 // @desc:Top padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
+    property int lockScreenPaddingRight: config.intValue("LockScreen/padding-right") || 0 // @desc:Right padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
+    property int lockScreenPaddingBottom: config.intValue("LockScreen/padding-bottom") || 0 // @desc:Bottom padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
+    property int lockScreenPaddingLeft: config.intValue("LockScreen/padding-left") || 0 // @desc:Left padding of the lock screen. <br/>See also: <a href="#clockposition">Clock/position</a>, <a href="#lockmessageposition">Message/position</a>.
     property string lockScreenBackground: config.stringValue("LockScreen/background") || "default.jpg" // @possible:File in `backgrounds/` @desc:Background of the lock screen.<br/>Supported formats: jpg, png, avi, mp4, mov, mkv, m4v, webm. <strong>.gifs are not supported as they may cause SDDM to crash.</strong> <br/>See also: <a href="#animatedbackgroundplaceholder">animated-background-placeholder</a>
     property bool lockScreenUseBackgroundColor: config.boolValue('LockScreen/use-background-color') // @desc:Whether or not to use a plain color as background of the lock screen instead of an image/video file.
     property color lockScreenBackgroundColor: config.stringValue("LockScreen/background-color") || "#000000" // @desc:The color to be used as background of the lock screen. <br/>See also: <a href="#lockscreenusebackgroundcolor">use-background-color<a>
-    property int lockScreenBlur: config.intValue("LockScreen/blur") // @desc:Amount of blur to be applied to the background of the lock screen. 0 means no blur.
-    property real lockScreenBrightness: config.realValue("LockScreen/brightness") // @possible:-1.0 ≤ R ≤ 1.0 @desc:Brightness of the background of the lock screen. 0.0 leaves unchanged, -1.0 makes it black and 1.0 white.
-    property real lockScreenSaturation: config.realValue("LockScreen/saturation") // @possible:-1.0 ≤ R ≤ 1.0 @desc:Saturation of the background of the lock screen. 0.0 leaves unchanged, -1.0 makes it grayscale and 1.0 very saturated.
+    property int lockScreenBlur: config.intValue("LockScreen/blur") || 0 // @desc:Amount of blur to be applied to the background of the lock screen. 0 means no blur.
+    property real lockScreenBrightness: config.realValue("LockScreen/brightness") || 0.0 // @possible:-1.0 ≤ R ≤ 1.0 @desc:Brightness of the background of the lock screen. 0.0 leaves unchanged, -1.0 makes it black and 1.0 white.
+    property real lockScreenSaturation: config.realValue("LockScreen/saturation") || 0.0 // @possible:-1.0 ≤ R ≤ 1.0 @desc:Saturation of the background of the lock screen. 0.0 leaves unchanged, -1.0 makes it grayscale and 1.0 very saturated.
 
     // [LockScreen.Clock]
     property bool clockDisplay: config['LockScreen.Clock/display'] === "false" ? false : true // @desc:Whether or not to display the clock in the lock screen.
@@ -44,7 +44,7 @@ QtObject {
     property int dateFontSize: config.intValue("LockScreen.Date/font-size") || 14 // @desc:Font size of the date.
     property int dateFontWeight: config.intValue("LockScreen.Date/font-weight") || 400 // @desc:Font weight of the date. 400 = regular, 600 = bold, 800 = black
     property color dateColor: config.stringValue("LockScreen.Date/color") || "#FFFFFF" // @desc:Color of the date.
-    property int dateMarginTop: config.intValue("LockScreen.Date/margin-top") // @desc:Top margin from the clock
+    property int dateMarginTop: config.intValue("LockScreen.Date/margin-top") || 0 // @desc:Top margin from the clock
 
     // [LockScreen.Message]
     property bool lockMessageDisplay: config['LockScreen.Message/display'] === "false" ? false : true // @desc:Whether or not to display the custom message in the lock screen.
@@ -59,7 +59,7 @@ QtObject {
     property int lockMessageIconSize: config.intValue("LockScreen.Message/icon-size") || 16 // @desc:Size of the custom message's icon.
     property color lockMessageColor: config.stringValue("LockScreen.Message/color") || "#FFFFFF" // @desc:Color of the custom message.
     property bool lockMessagePaintIcon: config['LockScreen.Message/paint-icon'] === "false" ? false : true // @desc:Whether or not to paint the icon with the same color as the text.
-    property int lockMessageSpacing: config.intValue("LockScreen.Message/spacing") // @desc:Spacing between the icon and the text in the custom message.
+    property int lockMessageSpacing: config.intValue("LockScreen.Message/spacing") || 0 // @desc:Spacing between the icon and the text in the custom message.
 
     // [LoginScreen]
     property string loginScreenBackground: config.stringValue("LoginScreen/background") || "default.jpg" // @possible:File in `backgrounds/` @desc:Background of the login screen.<br/>Supported formats: jpg, png, avi, mp4, mov, mkv, m4v, webm. <strong>.gifs are not supported as they may cause SDDM to crash.</strong> <br/>See also: <a href="#animatedbackgroundplaceholder">animated-background-placeholder</a>
@@ -128,16 +128,6 @@ QtObject {
     property int loginButtonFontSize: config.intValue("LoginScreen.LoginArea.LoginButton/font-size") || 12 // @desc:Font size of the label of the login button.
     property int loginButtonFontWeight: config.intValue("LoginScreen.LoginArea.LoginButton/font-weight") || 600 // @desc:Font weight of the label of the login button. 400 = regular, 600 = bold, 800 = black
 
-    // [LoginScreen.LoginArea.Spinner]
-    property bool spinnerDisplayText: config['LoginScreen.LoginArea.Spinner/display-text'] === "false" ? false : true // @desc:Whether or not to display the text with the spinning icon.
-    property string spinnerText: config.stringValue("LoginScreen.LoginArea.Spinner/text") || "Logging in" // @desc:Text to be displayed with the spinning icon.
-    property string spinnerFontFamily: config.stringValue("LoginScreen.LoginArea.Spinner/font-family") || "RedHatDisplay" // @desc:Font family of the text to be displayed with the spinning icon.
-    property int spinnerFontWeight: config.intValue("LoginScreen.LoginArea.Spinner/font-weight") || 600 // @desc:Font weight of the text to be displayed with the spinning icon. 400 = regular, 600 = bold, 800 = black
-    property int spinnerFontSize: config.intValue("LoginScreen.LoginArea.Spinner/font-size") || 12 // @desc:Font size of the spinner's text.
-    property int spinnerIconSize: config.intValue("LoginScreen.LoginArea.Spinner/icon-size") || 32 // @desc:Size of the spinning icon.
-    property string spinnerIcon: config.stringValue("LoginScreen.LoginArea.Spinner/icon") || "spinner.svg" // @possible:File in `icons/` @desc:Spinning icon.
-    property color spinnerColor: config.stringValue("LoginScreen.LoginArea.Spinner/color") || "#FFFFFF" // @desc:Color of the spinning icon and its text.
-    property int spinnerSpacing: config.intValue("LoginScreen.LoginArea.Spinner/spacing") // @desc:Spacing between the spinning icon and its text.
 
     // [LoginScreen.LoginArea.WarningMessage]
     property string warningMessageFontFamily: config.stringValue("LoginScreen.LoginArea.WarningMessage/font-family") || "RedHatDisplay" // @desc:Font family of the warning message.
