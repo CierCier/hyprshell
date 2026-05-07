@@ -1,3 +1,7 @@
+android-platform
+android-platform-35
+android-sdk-build-tools-34
+android-sdk-cmdline-tools-latest
 android-sdk-platform-tools
 android-studio
 apfs-fuse-git
@@ -6,14 +10,13 @@ breezex-cursor-theme
 brother-dcpt525w
 cider
 clipse
-distroav
 envycontrol
-gradia
+jdtls
 lib32-gst-plugins-base-libs
 lib32-gstreamer
 lmstudio-bin
+marp-cli-bin
 mpvpaper
-ndi-sdk
 postman-bin
 pudding-bin
 python312
