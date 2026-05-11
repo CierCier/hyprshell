@@ -5,8 +5,9 @@ local terminal = "kitty"
 local browser = "zen-browser"
 local screenshot = "/home/cier/.local/bin/hypr-sc"
 local filemanager = "thunar"
-local qsipc = "qs -c noctalia-shell ipc call"
-local powermenu = qsipc .. " sessionMenu toggle"
+local qsipc = "qs -c noctalia-shell ipc call "
+local powermenu = qsipc .. "sessionMenu toggle"
+local launcher = qsipc .. "launcher toggle"
 local settings = "XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 local musicplayer = "kitty --class rmpc -e rmpc"
 local clipboard = "kitty --class clipse -e clipse"
@@ -14,14 +15,14 @@ local clipboard = "kitty --class clipse -e clipse"
 
 -- Basic binds
 bindm("Q", disp.window.close())
-bind_run("L", "hyprlock")
-bind_run("Escape", powermenu)
-bind_run("SHIFT + R", "hyprctl reload")
+bindm_run("L", "hyprlock")
+bindm_run("Escape", powermenu)
+bindm_run("SHIFT + R", "hyprctl reload")
 
-bind_run("M", musicplayer)
-bind_run("I", settings)
-bind_run("ALT + Space", qsipc .. " launcher toggle")
-bind_run("V", clipboard)
+bindm_run("M", musicplayer)
+bindm_run("I", settings)
+bindm_run("ALT + Space", launcher)
+bindm_run("V", clipboard)
 
 -- Focus
 bindm("Left", focus("left"))
@@ -43,7 +44,7 @@ bindm("mouse:273", disp.window.resize(), { mouse = true })
 bindm("R", disp.window.resize(), { mouse = true })
 
 -- Kill
-bind_run("SHIFT + ALT + Q", "hyprctl kill")
+bindm_run("SHIFT + ALT + Q", "hyprctl kill")
 
 -- Layout
 bindm("SHIFT + Space", disp.window.float({ action = "toggle" }))
@@ -51,9 +52,9 @@ bindm("F", disp.window.fullscreen({ mode = "fullscreen" }))
 bindm("ALT + F", disp.window.fullscreen({ mode = "maximized" }))
 
 -- Programs
-bind_run("Return", terminal)
-bind_run("W", browser)
-bind_run("E", filemanager)
+bindm_run("Return", terminal)
+bindm_run("W", browser)
+bindm_run("E", filemanager)
 
 -- Audio / Media
 bind("XF86AudioMute", exec("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
@@ -71,12 +72,12 @@ bind("XF86MonBrightnessUp", exec("brightnessctl set +2%"), { locked = true })
 bind("XF86MonBrightnessDown", exec("brightnessctl set 2%-"), { locked = true })
 
 -- Screenshots
-bind_run("SHIFT + S", screenshot .. " area")
-bind_run("S", "grimblast copy area")
-bind_run("Print", screenshot .. " screen")
-bind_run("SHIFT + E", screenshot .. " edit")
-bind_run("SHIFT + T", screenshot .. " ocr")
-bind_run("C", "hyprpicker -a")
+bindm_run("SHIFT + S", screenshot .. " area")
+bindm_run("S", "grimblast copy area")
+bindm_run("Print", screenshot .. " screen")
+bindm_run("SHIFT + E", screenshot .. " edit")
+bindm_run("SHIFT + T", screenshot .. " ocr")
+bindm_run("C", "hyprpicker -a")
 
 -- Workspaces
 workspaces()

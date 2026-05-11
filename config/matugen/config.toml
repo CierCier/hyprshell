@@ -2,19 +2,7 @@
 
 
 [templates.hyprland]
-input_path = "~/.config/hypr/colors.template"
-output_path = "~/.config/hypr/colors.conf"
+input_path = "/home/cier/.dots/config/hypr/colors.template"
+output_path = "/home/cier/.dots/config/hypr/colors.lua"
 
 
-[templates.waybar]
-input_path = "~/.config/waybar/colors.template"
-output_path = "~/.config/waybar/colors.css"
-
-#[templates.quickshell]
-#input_path = "~/.config/quickshell/theme.template"
-#output_path = "~/.config/quickshell/theme.map"
-
-
-[templates.ignis]
-input_path = "~/.config/ignis/colors.template"
-output_path = "~/.config/ignis/colors.scss"

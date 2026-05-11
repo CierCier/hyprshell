@@ -18,7 +18,11 @@ end
 
 -- Program execution binding
 bind_run = function(key, cmd, opts)
-    bindm(key, exec(cmd), opts)
+    bind(key, exec(cmd), opts)
+end
+
+bindm_run = function(key, cmd, opts)
+	bindm(key, exec(cmd), opts)
 end
 
 -- Smart Helpers
