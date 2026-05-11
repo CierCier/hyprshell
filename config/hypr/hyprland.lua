@@ -1,0 +1,11 @@
+-- Load modules
+require("hyprland.env")
+require("hyprland.exec")
+require("hyprland.monitor")
+require("hyprland.device")
+require("hyprland.general")
+require("hyprland.animations")
+require("hyprland.rules")
+require("hyprland.keybinds")
+require("hyprland.misc")
+require("hyprland.plugins")
