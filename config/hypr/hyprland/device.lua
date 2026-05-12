@@ -20,5 +20,4 @@ hl.config({
 hl.device({
     name = "logitech-g102-lightsync-gaming-mouse",
     sensitivity = 1.0,
-    accel_profile = "custom 1600 0.3, 1.2",
 })

@@ -3,7 +3,7 @@ require("hyprland.utils")
 -- Variables
 local terminal = "kitty"
 local browser = "zen-browser"
-local screenshot = "/home/cier/.local/bin/hypr-sc"
+local screenshot = require("hyprland.screenshot")
 local filemanager = "thunar"
 local qsipc = "qs -c noctalia-shell ipc call "
 local powermenu = qsipc .. "sessionMenu toggle"
@@ -21,7 +21,7 @@ bindm_run("SHIFT + R", "hyprctl reload")
 
 bindm_run("M", musicplayer)
 bindm_run("I", settings)
-bindm_run("ALT + Space", launcher)
+bind_run("ALT + Space", launcher)
 bindm_run("V", clipboard)
 
 -- Focus
@@ -72,11 +72,11 @@ bind("XF86MonBrightnessUp", exec("brightnessctl set +2%"), { locked = true })
 bind("XF86MonBrightnessDown", exec("brightnessctl set 2%-"), { locked = true })
 
 -- Screenshots
-bindm_run("SHIFT + S", screenshot .. " area")
+bindm_run("SHIFT + S", screenshot.area)
 bindm_run("S", "grimblast copy area")
-bindm_run("Print", screenshot .. " screen")
-bindm_run("SHIFT + E", screenshot .. " edit")
-bindm_run("SHIFT + T", screenshot .. " ocr")
+bindm_run("Print", screenshot.screen)
+bindm_run("SHIFT + E", screenshot.edit)
+bindm_run("SHIFT + T", screenshot.ocr)
 bindm_run("C", "hyprpicker -a")
 
 -- Workspaces
