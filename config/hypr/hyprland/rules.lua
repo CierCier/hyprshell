@@ -30,6 +30,16 @@ hl.layer_rule({
     xray = 0
 })
 
+hl.layer_rule({
+    name = "noctalia",
+    match = { namespace = "noctalia-background-.*$" },
+    blur = true,
+	blur_popups = true,
+    ignore_alpha = 0.5,
+    xray = 0
+})
+
+
 -- Permissions
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 hl.permission("/usr/bin/obs", "screencopy", "allow")

@@ -7,7 +7,7 @@ local screenshot = require("hyprland.screenshot")
 local filemanager = "thunar"
 local qsipc = "qs -c noctalia-shell ipc call "
 local powermenu = qsipc .. "sessionMenu toggle"
-local launcher = qsipc .. "launcher toggle"
+local launcher = "hyprlauncher"
 local settings = "XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 local musicplayer = "kitty --class rmpc -e rmpc"
 local clipboard = "kitty --class clipse -e clipse"
