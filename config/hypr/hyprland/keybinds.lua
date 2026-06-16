@@ -5,10 +5,10 @@ local terminal = "kitty"
 local browser = "zen-browser"
 local screenshot = require("hyprland.screenshot")
 local filemanager = "thunar"
-local qsipc = "qs -c noctalia-shell ipc call "
-local powermenu = qsipc .. "sessionMenu toggle"
+local noctalia = "noctalia msg "
+local powermenu = noctalia .. "panel-toggle session"
 local launcher = "hyprlauncher"
-local settings = "XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+local settings = noctalia .. "panel-toggle control-center"
 local musicplayer = "kitty --class rmpc -e rmpc"
 local clipboard = "kitty --class clipse -e clipse"
 
@@ -59,9 +59,9 @@ bindm_run("E", filemanager)
 -- Audio / Media
 bind("XF86AudioMute", exec("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 bind("XF86AudioRaiseVolume", exec("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+"),
-    { locked = true, repeating = true })
+	{ locked = true, repeating = true })
 bind("XF86AudioLowerVolume", exec("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%-"),
-    { locked = true, repeating = true })
+	{ locked = true, repeating = true })
 
 bind("XF86AudioNext", exec("playerctl next"), { locked = true })
 bind("XF86AudioPlay", exec("playerctl play-pause"), { locked = true })

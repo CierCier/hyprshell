@@ -5,7 +5,7 @@ local colors = require("colors")
 frule("clipse", "800 650")
 frule("(thunar|org\\.kde\\.dolphin)", "800 600", "filemanager-float")
 frule("(org\\.pulseaudio\\.pavucontrol|blueberry\\.py|org\\.gnome\\.Settings)", "800 600", "settings-float")
-frule("(rmpc|Cider|cider)", "1080 540", "music-float")
+frule("(rmpc|Cider|cider)", "1440 1080", "music-float")
 frule("(steam|Steam)")
 
 hl.window_rule({
@@ -31,12 +31,13 @@ hl.layer_rule({
 })
 
 hl.layer_rule({
-    name = "noctalia",
-    match = { namespace = "noctalia-background-.*$" },
-    blur = true,
-	blur_popups = true,
-    ignore_alpha = 0.5,
-    xray = 0
+  name = "noctalia",
+  match = {
+    namespace = "^noctalia-(bar-.+|notification|dock|panel|osd)$",
+  },
+  ignore_alpha = 0.5,
+  blur = true,
+  blur_popups = true,
 })
 
 

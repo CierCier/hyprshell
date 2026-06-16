@@ -40,6 +40,15 @@ hl.config({
         dim_inactive = false,
         dim_strength = 0.4,
         dim_special = 0,
+		
+		shadow = {
+			enabled = false
+		},
+
+		glow = {
+			enabled = false,
+		}
+
     },
 })
 

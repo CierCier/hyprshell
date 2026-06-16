@@ -1595,3 +1595,777 @@ Warning: Xing stream size off by more than 1%, fuzzy seeking may be even more fu
 2025-12-28T12:19:59 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
 2025-12-29T14:53:37 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
 2025-12-29T16:31:21 exception: inotify_add_watch("/home/cier/Music/library") failed: No such file or directory
+2026-06-13T12:16:39 exception: Failed to open "/home/cier/.config/mpd/state": No such file or directory
+2026-06-13T12:16:39 update: added ALI-Wildside/01 Wild Side.opus
+2026-06-13T12:16:39 update: added ALI-Wildside/02 Jungle Love.opus
+2026-06-13T12:16:39 update: added ALI-Wildside/03 Jungle Love (Instrumental).opus
+2026-06-13T12:16:39 update: added ALI-Wildside/04 Wild Side (Anime Version).opus
+2026-06-13T12:16:39 update: added Ado/Episode X.opus
+2026-06-13T12:16:39 update: added Ado/Love Is War (Cover).opus
+2026-06-13T12:16:39 update: added Aiobahn/しあわせになんてならないで - Aiobahn.opus
+2026-06-13T12:16:39 update: added Akatsuki/Akatsuki Records - HELLOHELL.opus
+2026-06-13T12:16:39 update: added Akatsuki/Akatsuki Records - HANIPAGANDA.opus
+2026-06-13T12:16:39 update: added Akatsuki/Akatsuki Records - KARMANATIONS.opus
+2026-06-13T12:16:39 update: added Akatsuki/Akatsuki Records - Necromantic.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/01. おらくる.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/02. Knock it out!.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/03. ハッピーピープル.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/04. START UP.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/05. 別世界 (Unknown DIVA Ver.).opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/06. 返信願望.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/07. 天使のagape (Unknown DIVA Ver.).opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/08. 中空の庭 (Unknown DIVA Ver.).opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/10. 片羽.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/11. 純粋心.opus
+2026-06-13T12:16:39 update: added Amane Kanata - Unknown Diva/12. 特者生存ワンダラダー!! (Unknown DIVA Ver.).opus
+2026-06-13T12:16:39 update: added Andora/Andora - Euphoria.opus
+2026-06-13T12:16:39 update: added Andora/Andora - Pop It.opus
+2026-06-13T12:16:39 update: added Arknights/ALIVE.opus
+2026-06-13T12:16:39 update: added Arknights/Ambiguous Morality.opus
+2026-06-13T12:16:39 update: added Arknights/Arknights OST - Babel Lobby Theme _ アークナイツ_明日方舟 バベル BGM.opus
+2026-06-13T12:16:39 update: added Arknights/Arsonist.opus
+2026-06-13T12:16:39 update: added Arknights/Battleplan Extinguished Sins.opus
+2026-06-13T12:16:39 update: added Arknights/Battleplan Pyrolysis.opus
+2026-06-13T12:16:39 update: added Arknights/Bluish Light.opus
+2026-06-13T12:16:39 update: added Arknights/Broken Sun.opus
+2026-06-13T12:16:39 update: added Arknights/Civilight Eterna.opus
+2026-06-13T12:16:39 update: added Arknights/Dormant Craving.opus
+2026-06-13T12:16:39 update: added Arknights/Eclipse.opus
+2026-06-13T12:16:39 update: added Arknights/Eternal Flame.opus
+2026-06-13T12:16:39 update: added Arknights/Flame Shadow.opus
+2026-06-13T12:16:39 update: added Arknights/Heavenly Me.opus
+2026-06-13T12:16:39 update: added Arknights/I Believe In Us.opus
+2026-06-13T12:16:39 update: added Arknights/I Will Touch the Sky.opus
+2026-06-13T12:16:39 update: added Arknights/MONKEY MAJIK - Running in the Dark.opus
+2026-06-13T12:16:39 update: added Arknights/Magic Theorem.opus
+2026-06-13T12:16:39 update: added Arknights/March On!.opus
+2026-06-13T12:16:39 update: added Arknights/Merciful Broken Sun.opus
+2026-06-13T12:16:39 update: added Arknights/Misty Memory (Night Version).opus
+2026-06-13T12:16:39 update: added Arknights/Morning Dew.opus
+2026-06-13T12:16:39 update: added Arknights/Mortal Eye.opus
+2026-06-13T12:16:39 update: added Arknights/Never Give Up (Arknights Soundtrack).opus
+2026-06-13T12:16:39 update: added Arknights/Operation Basepoint.opus
+2026-06-13T12:16:39 update: added Arknights/Operation Blade.opus
+2026-06-13T12:16:39 update: added Arknights/Operation Fake Waves.opus
+2026-06-13T12:16:39 update: added Arknights/Operation Pine Soot.opus
+2026-06-13T12:16:39 update: added Arknights/Operation Pyrite.opus
+2026-06-13T12:16:39 update: added Arknights/Renegade.opus
+2026-06-13T12:16:39 update: added Arknights/Revealing.opus
+2026-06-13T12:16:39 update: added Arknights/Sentenced.opus
+2026-06-13T12:16:39 update: added Arknights/Settle into Ash.opus
+2026-06-13T12:16:39 update: added Arknights/SilverAsh the Reignfrost EP - The Walk _ Arknights 異格シルバーアッシュ.opus
+2026-06-13T12:16:39 update: added Arknights/Spark for Dream.opus
+2026-06-13T12:16:39 update: added Arknights/Stainless Heart.opus
+2026-06-13T12:16:39 update: added Arknights/The Masses' Travels Mix _ Arknights 大陸版6周年 BGM集.opus
+2026-06-13T12:16:39 update: added Arknights/Towards Her Light.opus
+2026-06-13T12:16:39 update: added Arknights/Unchanging wish.opus
+2026-06-13T12:16:39 update: added Arknights/Undertopia.opus
+2026-06-13T12:16:39 update: added Arknights/浸春蕪.opus
+2026-06-13T12:16:39 update: added Arknights/狼之主.opus
+2026-06-13T12:16:39 update: added BanG/Ave mujica/3rd/01 - ‘S／’ The Way.opus
+2026-06-13T12:16:39 update: added BanG/Ave mujica/3rd/02 - Sophie.opus
+2026-06-13T12:16:39 update: added Creepy Nuts/Creepy Nuts - Itano Ueno Mamono.opus
+2026-06-13T12:16:39 update: added Creepy Nuts/Creepy Nuts - Yofukashino Uta.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/01 ダズビー - オセロ.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/02 ダズビー - 愛じゃない.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/03 ダズビー - アディオス.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/04 ダズビー - Angel’s Fake.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/05 ダズビー - 砂嵐.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/06 ダズビー - シュガーコート.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/07 ダズビー - 口笛で愛は歌えない.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/08 ダズビー - 声の在り処.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/09 ダズビー - hikari.opus
+2026-06-13T12:16:39 update: added Dazbee-orbit FC/10 ダズビー - イビツナコトバ (Unplugged Ver.).opus
+2026-06-13T12:16:39 update: added Death Stranding 2/三浦大知 (Daichi Miura) _ Horizon Dreamer Dance Performance with Dollman.opus
+2026-06-13T12:16:39 update: added Death Stranding/08 Death Stranding .opus
+2026-06-13T12:16:39 update: added Death Stranding/05 Asylums for the Feeling .opus
+2026-06-13T12:16:39 update: added Death Stranding/04 Poznan .opus
+2026-06-13T12:16:39 update: added Death Stranding/10 Because We Have To .opus
+2026-06-13T12:16:39 update: added Death Stranding/06 Once in a Long, Long While .opus
+2026-06-13T12:16:39 update: added Death Stranding/09 Please Don't Stop Chapter 1 .opus
+2026-06-13T12:16:39 update: added Death Stranding/03 Easy Way Out .opus
+2026-06-13T12:16:39 update: added Death Stranding/01 Don't Be So Serious .opus
+2026-06-13T12:16:39 update: added Death Stranding/02 Bones .opus
+2026-06-13T12:16:39 update: added Death Stranding/07 St. Eriksplan .opus
+2026-06-13T12:16:39 update: added Death Stranding/11 Waiting (10 Years) .opus
+2026-06-13T12:16:39 update: added Death Stranding/12 Almost Nothing .opus
+2026-06-13T12:16:39 update: added Death Stranding/13 Tonight, Tonight, Tonight .opus
+2026-06-13T12:16:39 update: added Death Stranding/14 Nobody Else .opus
+2026-06-13T12:16:39 update: added Death Stranding/15 The Machine .opus
+2026-06-13T12:16:39 update: added Death Stranding/16 Anything You Need .opus
+2026-06-13T12:16:39 update: added Death Stranding/17 Give Up .opus
+2026-06-13T12:16:39 update: added Death Stranding/18 Patience .opus
+2026-06-13T12:16:39 update: added Death Stranding/19 Path .opus
+2026-06-13T12:16:39 update: added Death Stranding/20 Not Around .opus
+2026-06-13T12:16:39 update: added Death Stranding/21 I'm Leaving .opus
+2026-06-13T12:16:39 update: added Death Stranding/22 I'll Keep Coming .opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/01. ヴァンパイア.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/02. アニマル.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/03. 状態異常彼女.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/04. U.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/05. シンデレラ.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/06. ケサランパサラン.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/07. ギフト.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/08. パラサイト.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/09. ジレンマ.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/10. おじゃま虫Ⅱ.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - 8thAlbum 「MANNEQUIN」 [FLAC]/11. モザイクロール (Reloaded).opus
+2026-06-13T12:16:39 update: added Deco 27/DECO 27 - Ghost Rule.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO 27 - Vampire.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO 27 - ヒバナ -Reloaded-.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO-27 - ハオ feat. 初音ミク - DECO-27 128.778.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO27 - ハオ.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 & ピノキオピー - デビルじゃないもん.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 & ピノキオピー - ヴァンパイア (ピノキオピー’s Miku Ver.).opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 & ピノキオピー - 神っぽいな (DECO＊27's Miku Ver.).opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - ボルテッカー.opus
+2026-06-13T12:16:39 update: added Deco 27/DECO＊27 - ラビットホール.opus
+2026-06-13T12:16:39 update: added Deco 27/Rookie.opus
+2026-06-13T12:16:39 update: added Deco 27/シンデレラ feat. 初音ミク.opus
+2026-06-13T12:16:39 update: added FLCL/02. Ride on Shooting Star.opus
+2026-06-13T12:16:39 update: added FLCL/01. Last Dinosaur.opus
+2026-06-13T12:16:39 update: added FLCL/03. Sad Sad Kiddie.opus
+2026-06-13T12:16:39 update: added FLCL/04. Carnival.opus
+2026-06-13T12:16:39 update: added FLCL/05. Runner's High -FLCL Version-.opus
+2026-06-13T12:16:39 update: added FLCL/06. Instant Music.opus
+2026-06-13T12:16:39 update: added FLCL/07. Stalker.opus
+2026-06-13T12:16:39 update: added FLCL/08. Rever's Edge [B-6].opus
+2026-06-13T12:16:39 update: added FLCL/09. Stalker Goes to Babylon.opus
+2026-06-13T12:16:39 update: added FLCL/10. One Life.opus
+2026-06-13T12:16:39 update: added FLCL/11. Pain [A-7].opus
+2026-06-13T12:16:39 update: added FLCL/12. Kabalevsky from 'Clown' -Gallop.opus
+2026-06-13T12:16:39 update: added FLCL/13. Hybrid Rainbow.opus
+2026-06-13T12:16:39 update: added FLCL/14. Selfish-B [B-5].opus
+2026-06-13T12:16:39 update: added FLCL/15. Pink [A-6].opus
+2026-06-13T12:16:39 update: added FLCL/16. Beautiful Morning with You.opus
+2026-06-13T12:16:39 update: added FLCL/17. Sleepy Head.opus
+2026-06-13T12:16:39 update: added FLCL/18. Bran-new Lovesong.opus
+2026-06-13T12:16:39 update: added FLCL/19. Come Down.opus
+2026-06-13T12:16:39 update: added FLCL/20. Advice -FLCL Arrange Version-.opus
+2026-06-13T12:16:39 update: added FLCL/21. Little Busters.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Alchemist.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Atlas.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Down with the King.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Drifting.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Faster.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Mimi-'s Delivery Service.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - No Time to Explain.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Nomu.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Orbit.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Osmosis.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Slingshot.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Tell Me You Know.opus
+2026-06-13T12:16:39 update: added Good Kid/Good Kid - Witches.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Alone Infection.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Armor-clad Faith.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Crawl.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Find Your One Way.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Hellfire.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Let Me Crave Your Way.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Love the Subhuman Self.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Necessary Discrepancy.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Out of the Box.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Play the Hero.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Requiem.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Rock Parade.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Smell of the Game.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Talk About You.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/The Disaster of Passion.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/The Name of Heaven.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/The Roar of the Spark.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/Trigger.opus
+2026-06-13T12:16:39 update: added Guilty Gear Strive/What do you fight for.opus
+2026-06-13T12:16:39 update: added HIMEHINA/01. キスキツネ.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/01.Embers.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/02.Hearthfire.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/03.Streets Abuzz.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/04.Faded Sun.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/05.Frosty Trail.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/06.Order.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/07.Braving the Cold.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/08.Warm Sun.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/09.Sleep Tight.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/10.Silent.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/11.Cutting Mistral.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/12.Tempered Cord.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/13.Dense Floe.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/14.Traceless Drift.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/15.Ghost From the Past.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/16.Sinking Hoarfrost.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/17.Kindling.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/18.Underground.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/19.Blaze.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/20.Conflict Undraped.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/21.Crystal Tears.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/22.Lingering Heat.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/23.Thick Haze.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/25.Eternal Freeze.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/24.Godfather.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/26.Everwinter.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/27.Frozen March.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/28.Fate.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/29.A Trap With No Return.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/30.Wildfire.opus
+2026-06-13T12:16:39 update: added HSR-Of snow and ember/31.Wildfire (Instrumental).opus
+2026-06-13T12:16:39 update: added Holo Advent/Above Below.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/01.リップシンク.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/10.プラネタリウム.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/09.エンドロール.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/08.Baby Don't Stop.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/06.モッシュレース.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/04.P.E.T..opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/02.Sweet Appetite.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/05.ビビビ.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/03.ヒル.opus
+2026-06-13T12:16:39 update: added Holo-27-Originals-Vol1/07.夢嵐.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/01. 灼熱にて純情(wii-wii-woo).opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/02. TEMPLATE.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/03. みちづれ.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/04. 褪せたハナミドリ.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/05. TRUE GIRL SHOW.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/07. デビュタントボール.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/06. 放送室.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/08. 7days.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/09. Damn Good Day.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/10. ソワレ.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Specter/11. Newton.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/01 星街すいせい - Stellar Stellar.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/02 星街すいせい - NEXT COLOR PLANET （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/03 星街すいせい - 天球、彗星は夜を跨いで （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/04 星街すいせい - GHOST （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/05 星街すいせい - バイバイレイニー （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/07 星街すいせい - Bluerose （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/06 星街すいせい - 自分勝手Dazzling （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/08 星街すいせい - comet （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/09 星街すいせい - Andromeda.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/10 星街すいせい - Je t'aime。.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/11 星街すいせい - Starry Jet.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/Suisei-Still Still Stellar/12 星街すいせい - 駆けろ （Still Still Stellar ver.）.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/01. GET THE CROWN.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/01. ネバーフィクション (feat. 星街すいせい).opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/01. ビビデバ.opus
+2026-06-13T12:16:39 update: added Hoshimachi Suisei/01. ムーンライト.opus
+2026-06-13T12:16:39 update: added Hoyo-Mix White Night/01 Jake Miller & HOYO-MiX - WHITE NIGHT.opus
+2026-06-13T12:16:39 update: added Hoyo-Mix White Night/02 Jason Zhang & HOYO-MiX - 不眠之夜.opus
+2026-06-13T12:16:39 update: added Hoyo-Mix White Night/03 Kosei Nishiyama & HOYO-MiX - WHITE NIGHT (Japanese Ver.).opus
+2026-06-13T12:16:39 update: added Hoyo-Mix White Night/04 Jooyoung & HOYO-MiX - WHITE NIGHT (Korean Ver.).opus
+2026-06-13T12:16:39 update: added Hoyo-Mix White Night/05 HOYO-MiX - WHITE NIGHT (Instrumental).opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind ED1 Single - Freek'n You [JODECI]/01. Freek 'n You.opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind ED2 Single - Modern Crusaders [Enigma]/01. Modern Crusaders.opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind O.S.T vol.1 Overture/01_01_il vento d’oro.opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP1 Single - Fighting Gold [Coda]/01. Fighting Gold (English Version).opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP1 Single - Fighting Gold [Coda]/02. Fighting Gold.opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP1 Single - Fighting Gold [Coda]/03. Fighting Gold (Instrumental).opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP2 Single - Uragirimono no Requiem [Daisuke Hasegawa]/01. Traitor's Requiem.opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP2 Single - Uragirimono no Requiem [Daisuke Hasegawa]/02. Traitor's Requiem (English Version).opus
+2026-06-13T12:16:39 update: added JJBA/JOJO's Bizarre Adventure Golden Wind OP2 Single - Uragirimono no Requiem [Daisuke Hasegawa]/03. Traitor's Requiem (Instrumental).opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/01 照井順政 - 懐玉.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/02 照井順政 - Our Mission.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/03 照井順政 - 呪霊の探索.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/04 照井順政 - A Little Lesson.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/05 照井順政 - 伏黒甚爾.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/06 照井順政 - Elegant Time.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/07 照井順政 - You Jerk.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/08 照井順政 - 理子の捜索.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/09 照井順政 - Attack By Storm.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/10 合唱団 - Beautiful Dreamer.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/11 照井順政 - 無下限呪術.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/12 照井順政 - Prepare Yourself.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/14 照井順政 - Trip Itinerary.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/13 美音、照井順政 - 太陽燦々(てぃださんさん).opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/15 照井順政 - 一緒なら.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/16 照井順政 - No Hesitation.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/17 照井順政 - 仲間(じゅつし)の屍.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/18 照井順政 - フィジカルギフテッド.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/19 照井順政 - With Rage.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/20 照井順政 - Little Hand.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/21 照井順政 - Delirious.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/22 照井順政 - Decision.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/23 照井順政 - 呪霊の味.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/24 照井順政 - Arrogance.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/25 照井順政 - 玉折.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/26 照井順政 - 強くなってよ.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/27 照井順政 - 裡にいる何者か.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/28 照井順政 - 宵祭り.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 1/29 照井順政 - 究極メカ丸絶対形態(モード・アブソリュート).opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/01 照井順政 - Jujutsu Sorcerer.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/02 照井順政 - 渋谷事変.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/03 照井順政 - Bad Situation.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/04 照井順政 - 領域展開.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/05 照井順政 - 蝗害.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/06 照井順政 - 凶運.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/07 照井順政 - 溢れ出す3年間の青い春.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/08 照井順政 - 昏乱.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/09 照井順政 - Expectation.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/10 照井順政 - Recapture.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/11 照井順政 - Equilibrium.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/12 照井順政 - 共闘.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/13 照井順政 - 鈍刀.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/14 照井順政 - 特級特定疾病呪霊「疱瘡神」.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/15 照井順政 - 赫鱗.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/16 照井順政 - Resolve.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/17 照井順政 - 記憶.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/18 照井順政 - 揺蕩.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/19 照井順政 - 目覚め.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/20 照井順政 - 未だ知らず.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/21 照井順政 - 霹靂.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/22 照井順政 - 八握剣異戒神将魔虚羅.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/23 照井順政 - 伏魔御廚子.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/24 照井順政 - 曖昧な理由.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/25 照井順政 - 呪術師・釘崎野薔薇.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/26 照井順政 - 悪くなかった.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/27 照井順政 - 託されたもの.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/28 高田ちゃん(CV.黒沢ともよ) - 最高潮☆JUMPING!.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/29 照井順政 - 変身.opus
+2026-06-13T12:16:39 update: added Jujutsu Kaisen - Shibuya OST/CD 2/30 照井順政 - 憎むべき者.opus
+2026-06-13T12:16:39 update: added KANKAN/KANKAN - BOOST ANIMA.opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/01 KMNZ & VESPERBELL - 未来図.opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/02 KMNZ & HACHI - Fiction.opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/03 VESPERBELL & HACHI - Admit.opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/04 KMNZ - OVERNIGHT (Batsu Remix).opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/05 VESPERBELL - RISE (BlackY Remix).opus
+2026-06-13T12:16:39 update: added KMNZ, Vesperbell HARMONICS/06 HACHI - バスタイムプラネタリウム (gaze／／he's me Remix).opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/01 KMNZ - Opening.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/02 KMNZ - R U Game？.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/03 KMNZ - Melty Girl.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/04 KMNZ - sTarZ.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/05 KMNZ - Retouch.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/06 KMNZ - Def／Rag.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/07 KMNZ - Vr.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/08 KMNZ - Galaxy.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/09 KMNZ - Journey.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/10 KMNZ - Tokonatsu Style.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/11 KMNZ - Awaken.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/12 KMNZ - Letter.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/13 KMNZ - Daydream.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/14 KMNZ - And.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/15 KMNZ - We Are Back.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/16 KMNZ - Skool.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/17 KMNZ - Homey.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/18 KMNZ - Back to the Kids.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/19 KMNZ - Overnight.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/20 KMNZ - Sunny Day Morning.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/21 KMNZ - Practice.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/22 KMNZ - Haze.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/23 KMNZ - MC Battle.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/24 KMNZ - Kickin the Pride.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/25 KMNZ - Our Days.opus
+2026-06-13T12:16:39 update: added KMNZ-The Best Buddy/26 KMNZ - Star-Light.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/01 ヒトリユラリ.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/02 KING.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/03 不幸せ.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/04 百鬼祭.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/05 エッサホイサ.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/06 NaNaNa.opus
+2026-06-13T12:16:39 update: added Kanaria/K-F/07 ダークハッピー.opus
+2026-06-13T12:16:39 update: added Kanaria/01 Kanaria - エンヴィーベイビー.opus
+2026-06-13T12:16:39 update: added Kanaria/01 Kanaria feat. 星街すいせい - レクイエム (feat. 星街すいせい).opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/01. 青春コンプレックス.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/02. ひとりぼっち東京.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/03. Distortion!!.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/04. ひみつ基地.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/05. ギターと孤独と蒼い惑星.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/06. ラブソングが歌えない.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/07. あのバンド.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/08. カラカラ.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/09. 小さな海.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/10. なにが悪い.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/11. 忘れてやらない.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/12. 星座になれたら.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/13. フラッシュバッカー.opus
+2026-06-13T12:16:39 update: added Kessoku_Vol1/14. 転がる岩、君に朝が降る.opus
+2026-06-13T12:16:39 update: added Kobo Kanaeru/HELP!!.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/01. RESIST.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/02. NO MATCHING.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/03. アンダーワールドウタウタイ.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/04. プレシャス・シンドローム.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/06. Black Joke.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/05. Flash.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/07. Ark.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/08. かごめ.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/09. Erase.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/10. フーアーユーなんて言わないで.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/11. Autonomy.opus
+2026-06-13T12:16:39 update: added Kotone/Resist/12. 今回の騒動につきまして。.opus
+2026-06-13T12:16:39 update: added Kotone/01. CHARACTER.opus
+2026-06-13T12:16:39 update: added Mephisto-24bit/01. メフィスト.opus
+2026-06-13T12:16:39 update: added Mephisto-24bit/02. ファウスト.opus
+2026-06-13T12:16:39 update: added Mephisto-24bit/03. メフィスト (Anime Size Edit).opus
+2026-06-13T12:16:39 update: added Mephisto-24bit/04. メフィスト (Off Vocal Ver.).opus
+2026-06-13T12:16:39 update: added Mili/Let's Lament/01 Mili & KIHOW - In Hell We Live, Lament (Let's Lament).opus
+2026-06-13T12:16:39 update: added Mili/Let's Lament/02 Mili - Between Two Worlds (Let's Lament).opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/01.Red Dahlia.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/02.Ga1ahad and Scientific Witchery.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/03.RTRT.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/04.Unidentified Flavourful Object.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/05.Meatball Submarine.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/06.Vulnerability.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/07. -NENTEN-.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/08.Bathtub Mermaid.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/09.Cerebrite.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/10.Space Colony.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/12.Utopiosphere -Platonism-.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/11.world.execute(me);.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/13.Painful Death for the Lactose Intolerant.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/14.YUBIKIRI-GENMAN -special edit-.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/15.Sl0t.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/16.Past the Stargazing Season.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/17.Colorful.opus
+2026-06-13T12:16:39 update: added Mili/Miracle Milk/18.Komm, susser Tod.opus
+2026-06-13T12:16:39 update: added Mili/Mortal With You/01. Mortal With You.opus
+2026-06-13T12:16:39 update: added Mili/Mortal With You/03. Mortal With You (TV Size Ver.).opus
+2026-06-13T12:16:39 update: added Mili/Mortal With You/02. Mortal With You (Japanese Ver.).opus
+2026-06-13T12:16:39 update: added Mili/Mortal With You/04. Mortal With You (Instrumental).opus
+2026-06-13T12:16:39 update: added Mili/Rightfully/01 Rightfully (TV Animation Goblin Slayer opening).opus
+2026-06-13T12:16:39 update: added Mili/Rightfully/02 Mob Mentality.opus
+2026-06-13T12:16:39 update: added Mili/Rightfully/03 Region.opus
+2026-06-13T12:16:39 update: added Mili/Rightfully/04 Though Our Paths May Diverge (Goblin Slayer Episode Seven inserted song).opus
+2026-06-13T12:16:39 update: added Mili/Rightfully/05 Rightfully (INST) (TV Animation Goblin Slayer opening).opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/01. 冒険.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/02. 思考.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/03. 駆け引き.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/04. いたずら.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/05. まずい状況.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/06. 魔力が集まる場所.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/07. ルイジェルドの怒り.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/08. 掌の上.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/09. トーナとエリスの別れ.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/10. ミリス神聖国.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/11. 初めての海.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/12. 魔界大帝キシリカ・キシリス！？.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/13. ギレーヌのこと.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/14. 信頼を得る為に.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/15. ウェンポート.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/16. 密輸組織.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/17. 作戦会議.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/18. 笑顔の力.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/19. 快適な牢屋.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/20. 先輩と新入.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/21. ドルディア族.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/22. 共闘.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/23. 再会.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/24. 冒険者.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/25. 慰め.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/27. 神聖な世界.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/26. 待ってる.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/28. シーローン王宮.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/29. 秘密の作戦.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/30. まさか！？.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/31. 旅人の唄 -EP17 Inst Ver.-.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/32. ロキシーへの想い.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/33. ザノバの力.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/Vol2/34. 圧倒的力との遭遇.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/01. 旅人の唄.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/02. 目覚めの唄.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/03. 継承の唄.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/04. 祈りの唄.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/05. 遠くの子守の唄.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/06. 旅人の唄～帰郷～.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/07. オンリー.opus
+2026-06-13T12:16:39 update: added Mushoku Tensei/theme collection/08. 風と行く道.opus
+2026-06-13T12:16:39 update: added Nikke/Dirty Backyard.opus
+2026-06-13T12:16:39 update: added Nikke/TuNGSTeN.opus
+2026-06-13T12:16:39 update: added Nikke/01 - Headless Angel.opus
+2026-06-13T12:16:39 update: added Nikke/01.Aztc (Scenario Version).opus
+2026-06-13T12:16:39 update: added Nikke/01.I FEEL SO ALIVE (GODDESS OF VICTORY-NIKKE Original Soundtrack).opus
+2026-06-13T12:16:39 update: added Nikke/01.OVERCLOCKED (GODDESS OF VICTORY-NIKKE Original Soundtrack).opus
+2026-06-13T12:16:39 update: added Nikke/01.KILL THE LORD (feat. Whitney Sol) [GODDESS OF VICTORY-NIKKE Original Soundtrack].opus
+2026-06-13T12:16:39 update: added Nikke/01.ユニバーサル・スパイス!!!(Feat. Shabel Tonya).opus
+2026-06-13T12:16:39 update: added Nikke/02.Aztc.opus
+2026-06-13T12:16:39 update: added Nikke/02.Humming Kitchen.opus
+2026-06-13T12:16:39 update: added Nikke/03.Aztc - dust -.opus
+2026-06-13T12:16:39 update: added Nikke/03.Sweets & Tea.opus
+2026-06-13T12:16:39 update: added Nikke/04.Dwn.opus
+2026-06-13T12:16:39 update: added Nikke/04.Smile Rabbit Omurice.opus
+2026-06-13T12:16:39 update: added Nikke/05.Dwn - dust -.opus
+2026-06-13T12:16:39 update: added Nikke/05.House with a Sweet and Cozy Scent.opus
+2026-06-13T12:16:39 update: added Nikke/06.Destroying Calamity (Scenario Version).opus
+2026-06-13T12:16:39 update: added Nikke/06.Reach for the Stars (Feat. Miori Celesta).opus
+2026-06-13T12:16:39 update: added Nikke/07.Destroying Calamity.opus
+2026-06-13T12:16:39 update: added Nikke/08.Destroying Calamity - broken silence -.opus
+2026-06-13T12:16:39 update: added Nikke/09.Destroyed Serenity.opus
+2026-06-13T12:16:39 update: added Nikke/10.Destroyed Serenity - Shranz Mix -.opus
+2026-06-13T12:16:39 update: added Nikke/11.We′re never giving up.opus
+2026-06-13T12:16:39 update: added Nikke/Absolute Maker.opus
+2026-06-13T12:16:39 update: added Nikke/Goddess of Victory.opus
+2026-06-13T12:16:39 update: added Nikke/The Harvester.opus
+2026-06-13T12:16:39 update: added Random bs/Asian Hideout - Sugar Rush.opus
+2026-06-13T12:16:39 update: added Random bs/Carpenter Brut - Maniac.opus
+2026-06-13T12:16:39 update: added Random bs/Ken Ashcorp - Absolute Territory.opus
+2026-06-13T12:16:39 update: added Random bs/Maroon 5 - Maps.opus
+2026-06-13T12:16:39 update: added Random bs/Public Theatre - Anime Intro.opus
+2026-06-13T12:16:39 update: added Random bs/RichaadEB - Love Coloured Master Spark.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Animate Bonus Tracks/01. TRUTH ~A Great Detective of Love~ .opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Animate Bonus Tracks/02. おこちゃま戦争.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Tower Bonus Tracks/01. FLASH BACK.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Tower Bonus Tracks/02. トキヲ・ファンカ.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Tsutaya Bonus Tracks/01. magician's operation.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/Tsutaya Bonus Tracks/02. 妄想〆Question.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/01. -nil-.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/02. 極彩色.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/03. 生命線.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/04. 水底游歩道.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/05. ハルシアン.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/06. ロジックエージェント.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/07. -orderly-.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/08. mede：mede.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/09. Syrup.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/10. ラ・タタン.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/11. ミッドナイトストロウラ.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/12. Behind The Night.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/13. ROXY.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/14. 約束の蒼.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/15. MONSTER.opus
+2026-06-13T12:16:39 update: added Reol/Gokusaishiki/16. 染.opus
+2026-06-13T12:16:39 update: added Reol/No Title/01. -Opening-.opus
+2026-06-13T12:16:39 update: added Reol/No Title/02. ヒビカセ.opus
+2026-06-13T12:16:39 update: added Reol/No Title/03. オオエドランヴ.opus
+2026-06-13T12:16:39 update: added Reol/No Title/04. drop pop candy.opus
+2026-06-13T12:16:39 update: added Reol/No Title/05. -Interlude-.opus
+2026-06-13T12:16:39 update: added Reol/No Title/06. No title.opus
+2026-06-13T12:16:39 update: added Reol/No Title/07. Echo.opus
+2026-06-13T12:16:39 update: added Reol/No Title/08. -BWW SCREAM-.opus
+2026-06-13T12:16:39 update: added Reol/No Title/09. アシンメトリー.opus
+2026-06-13T12:16:39 update: added Reol/No Title/10. ギガンティックO.T.N -Big Death Edition-.opus
+2026-06-13T12:16:39 update: added Reol/No Title/11. -Ending-.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/01. VIORA.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/02. 404 not found.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/03. サマーホラーパーティ.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/04. DetaramE KiddinG.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/05. -FINAL SIGMA-.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/06. ちるちる.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/07. 神様になった日.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/08. Lunatic.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/09. RE：.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/10. コノヨLoading....opus
+2026-06-13T12:16:39 update: added Reol/Sigma/11. 宵々古今.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/12. ギミアブレスタッナウ.opus
+2026-06-13T12:16:39 update: added Reol/Sigma/13. VIP KID.opus
+2026-06-13T12:16:39 update: added Ryokuoushoku Shakai – Hana ni Natte (Anime Kusuriya no Hitorigoto OP) HI-RES 48 [hikarinoakari.com]/01. Ryokuoushoku Shakai - Be a flower.opus
+2026-06-13T12:16:39 update: added Ryokuoushoku Shakai – Hana ni Natte (Anime Kusuriya no Hitorigoto OP) HI-RES 48 [hikarinoakari.com]/02. Ryokuoushoku Shakai - Dream, Devil & Fantasy.opus
+2026-06-13T12:16:39 update: added SawanoHiroyuki/Avid.opus
+2026-06-13T12:16:39 update: added SawanoHiroyuki/LilaS.opus
+2026-06-13T12:16:39 update: added Singles/01 Love Love Love Song.opus
+2026-06-13T12:16:39 update: added Singles/Absolute zero.opus
+2026-06-13T12:16:39 update: added Singles/呼び声.opus
+2026-06-13T12:16:39 update: added Stellar/Stellar - Ashes.opus
+2026-06-13T12:16:39 update: added Stellar/Stellar - El Dorado.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/01 気づけよBaby.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/02 狂乱 Hey Kids!!.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/03 MIRROR.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/04 STAY ONE.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/05 エイミー.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/06 マナーモード.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/07 通り過ぎた季節の空で.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/08 カンタンナコト.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/09 A-E-U-I.opus
+2026-06-13T12:16:39 update: added The Oral Cigarettes-FIXION/10 Everything.opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/01. Dazzling.opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/02. For you.opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/03. 甘い夢.opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/04. Dark seeks light (TV Size).opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/05. A Promise (TV Size).opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/06. A Promise (ディア Ver.) (TV Size).opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/07. Dazzling (Instrumental).opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/08. For you (Instrumental).opus
+2026-06-13T12:16:39 update: added The worlds finest assassin/09. 甘い夢 (Instrumental).opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/01. Present Day.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/02. 魁.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/03. ANEMONE.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/04. タイダナワンダー.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/05. Whose thorns？.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/06. ライメイ.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/07. Purple Disease.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/08. サンビタリア.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/09. Antares.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/10. Cry Out.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/11. Twilight.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/Aster/12. 二人三脚.opus
+2026-06-13T12:16:39 update: added Tokoyami Towa/01. My Abyss.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/02. 不平不満の病.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/01. Under Mentality.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/03. アンダーキッズ.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/04. 腹黒女の戯言.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/05. アンダーヒロイン.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/06. いつかオトナになれるといいね。.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/07. 雨宿り.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/08. 雨模様.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/09. レインフォール.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/10. これだからやめらんない!.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/11. 傷つけど、愛してる。.opus
+2026-06-13T12:16:39 update: added Tuyu-Under Mentality/12. 朧月夜物語.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/01. 空が落ちてきた!.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/02. ニトロ.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/03. 雨路少女.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/04. オルソドクシア.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/05. 非生産的人生計画.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/06. アブノーマリティ・ダンシンガール.opus
+2026-06-13T12:16:39 update: added Uzoumuzou/07. 救済の祈り.opus
+2026-06-13T12:16:39 update: added VESPERBELL/issen.opus
+2026-06-13T12:16:39 update: added Valorant/VALORANT - Die For You.opus
+2026-06-13T12:16:39 update: added Valorant/VALORANT - one greater than you.opus
+2026-06-13T12:16:39 update: added WindBreaker/01 - Higher I'll Go.opus
+2026-06-13T12:16:39 update: added Wuthering Waves/Running For Your Life.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/02. Interlude “Awakening”.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/01. 勇者.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/03. 祝福.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/04. 海のまにまに.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/05. ミスター.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/06. Interlude “Worship”.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/07. アイドル.opus
+2026-06-13T12:16:39 update: added Yoasobi Book 3/08. セブンティーン.opus
+2026-06-13T12:16:40 update: added Yoasobi Book 3/09. アドベンチャー.opus
+2026-06-13T12:16:40 update: added Yoasobi Book 3/10. 好きだ.opus
+2026-06-13T12:16:40 update: added Yoshino/Odd Number.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/01 - -Toui Sora he- (Yosuga no Sora Main Theme).opus
+2026-06-13T12:16:40 update: added YosugaNoSora/03 - Egao no Yukue.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/02 - -Inori- (Yosuga no Sora Main Theme).opus
+2026-06-13T12:16:40 update: added YosugaNoSora/04 - Ninin no Kyori.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/05 - -Kioku- (Yosuga no Sora Main Theme).opus
+2026-06-13T12:16:40 update: added YosugaNoSora/06 - Suspended.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/07 - -Negai- (Yosuga no Sora Main Theme).opus
+2026-06-13T12:16:40 update: added YosugaNoSora/08 - Tsuioku Heart.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/09 - Sono Hi no Koto.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/10 - Before it's too late.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/11 - Mou 10 Nichi Me ka.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/12 - Orenai Kokoro.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/13 - Reset Button.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/14 - Haruka no Kokoro.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/15 - Rain like tears.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/16 - Tomadoi no Naka.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/17 - Old Memory.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/18 - Kimi no Warau Koe.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/19 - So Sweet Sorrow.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/20 - Deep Inside Region.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/21 - Iidasenakute.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/22 - June Song.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/23 - Soushitsu no Yokan.opus
+2026-06-13T12:16:40 update: added YosugaNoSora/24 - Kurayami no Mukou.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/01. buzzG - the WALL.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/02. buzzG - Glory sun.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/03. buzzG - 飛翔生.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/04. buzzG - ウキヨバナレディー.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/05. buzzG - プレイバック・ハイライト.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/06. buzzG - レクイエム.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/07. buzzG - 白昼夢で会おうよ -The Bard's Tale-.opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/08. buzzG - しわ [recollection].opus
+2026-06-13T12:16:40 update: added buzzG - THE WALL FLAC/09. buzzG - 星の唄 [recollection].opus
+2026-06-13T12:16:40 update: added hatsuboshi gakuen/Fighting My Way.opus
+2026-06-13T12:16:40 update: added hatsuboshi gakuen/Luna say maybe -  HATSUBOSHI GAKUEN.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Bonus CD/01 AKEBONO.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/01 愛されなくても君がいる.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/02 すきなことだけでいいです.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/03 おばけのウケねらい.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/04 ニナ.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/05 すろぉもぉしょん.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/06 アップルドットコム.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/07 からっぽのまにまに.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/08 モチベーションが死んでる.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/09 頓珍漢の宴.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/10 マッシュルームマザー .opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/11 きみも悪い人でよかった.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/12 ぼくらはみんな意味不明.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 1/13 10年後のボーカロイドのうた.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/01 セカイはまだ始まってすらいない.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/02 はじめまして地球人さん.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/03 ありふれたせかいせいふく.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/04 腐れ外道とチョコレゐト.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/05 空想しょうもない日々.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/06 内臓ありますか.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/07 ボカロはダサい.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/08 祭りだヘイカモン.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/09 ゴージャスビッグ対談.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/10 アンテナ – rerec –.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/11 ラブソングを殺さないで.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/12 eight hundred.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 2/13 君が生きてなくてよかった.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/01 マッシュルームマザー - ZANIO & PinocchioP live remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/02 ニナ - Jumping remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/03 ラブソングを殺さないで - JAPAN EXPO remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/04 すきなことだけでいいです - DECO27 & TeddyLoid remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/05 ぼくらはみんな意味不明 - nu metal remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/06 アップルドットコム - Sickness remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/07 ヨヅリナ - doze off remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/08 祭りだヘイカモン - 姦し remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/09 はじめまして地球人さん - nakatagai remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/10 内臓ありますか - ATOLS remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/KTBK-F/Disc 3/11 すろぉもぉしょん - sasakure.UK remix -.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/01 ピノキオピー - 神っぽいな.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/02 ピノキオピー - 魔法少女とチョコレゐト.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/03 ピノキオピー - 転生林檎.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/04 ピノキオピー - エゴイスト.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/05 ピノキオピー - 甘噛みでおねがい.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/06 ピノキオピー - コスモスパイス.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/07 ピノキオピー - 余命2꞉30.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/08 ピノキオピー - キラースパイダー.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/09 ピノキオピー - ちきゅう大爆発 (META ver).opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/10 ピノキオピー - 匿名M.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/11 ピノキオピー - META.opus
+2026-06-13T12:16:40 update: added pinnochioP/PinocchioP feat.Hatsune Miku – META FC/12 ピノキオピー - 腐れ外道とチョコレゐト (META remix).opus
+2026-06-13T12:16:40 update: added pinnochioP/01 ピノキオピー - 神っぽいな.opus
+2026-06-13T12:16:40 update: added togenari togeashi/01 - Emptiness and Catharsis.opus
+2026-06-13T12:16:40 update: added togenari togeashi/01 - I’ｍ here.opus
+2026-06-13T12:16:40 update: added togenari togeashi/01. 気鬱、白濁す.opus
+2026-06-13T12:16:40 update: added togenari togeashi/01. 碧いif.opus
+2026-06-13T12:16:40 update: added togenari togeashi/02. 理想的パラドクスとは.opus
+2026-06-13T12:16:40 update: added uncategorized/Ark.opus
+2026-06-13T12:16:40 update: added uncategorized/PUNISHMENT.opus
+2026-06-13T12:16:40 update: added uncategorized/Say Fanfare.opus
+2026-06-13T12:16:40 update: added uncategorized/Bruno Mars - Talking to the Moon.opus
+2026-06-13T12:16:40 update: added uncategorized/CHIMERA.opus
+2026-06-13T12:16:40 update: added uncategorized/Cravemob - Where The Stars Fall (Up All Night).opus
+2026-06-13T12:16:40 update: added uncategorized/FightSeventhDeusExMachina_Zoe ();.opus
+2026-06-13T12:16:40 update: added uncategorized/Fubuki Shirakami - Letter☆彡.opus
+2026-06-13T12:16:40 update: added uncategorized/Great Gable - Drift.opus
+2026-06-13T12:16:40 update: added uncategorized/Help me, ERINNNNNN!!.opus
+2026-06-13T12:16:40 update: added uncategorized/HoloJP Secret Society - Labyrinthine.opus
+2026-06-13T12:16:40 update: added uncategorized/Lost Kitten.opus
+2026-06-13T12:16:40 update: added uncategorized/Lyin.opus
+2026-06-13T12:16:40 update: added uncategorized/Machine Love (feat. Kasane Teto).opus
+2026-06-13T12:16:40 update: added uncategorized/Midnight Grand Orchestra - Midnight Mission.opus
+2026-06-13T12:16:40 update: added uncategorized/Nanashi Mumei - mumei.opus
+2026-06-13T12:16:40 update: added uncategorized/Neru - ロストワンの号哭(Lost One's Weeping) feat. Kagamine Rin - Neru OFFICIAL 132.941.opus
+2026-06-13T12:16:40 update: added uncategorized/Omoi - Teo.opus
+2026-06-13T12:16:40 update: added uncategorized/Oracle.opus
+2026-06-13T12:16:40 update: added uncategorized/Paradisus-Paradoxum.opus
+2026-06-13T12:16:40 update: added uncategorized/Queen of the night.opus
+2026-06-13T12:16:40 update: added uncategorized/SIAMES - The Wolf.opus
+2026-06-13T12:16:40 update: added uncategorized/Show - Puniru-Edition.opus
+2026-06-13T12:16:40 update: added uncategorized/Tim McMorris - Looking for Adventure.opus
+2026-06-13T12:16:40 update: added uncategorized/Tokoyami Towa - Sanvitalia.opus
+2026-06-13T12:16:40 update: added uncategorized/VESPERBELL - RAMPAGE.opus
+2026-06-13T12:16:40 update: added uncategorized/Vestia Zeta - You're Mine.opus
+2026-06-13T12:16:40 update: added uncategorized/Vows of the Sea - Ulpianus Theme - Arknights.opus
+2026-06-13T12:16:40 update: added uncategorized/WE RISE.opus
+2026-06-13T12:16:40 update: added uncategorized/Xion.opus
+2026-06-13T12:16:40 update: added uncategorized/Ying -莺 - Chrysalis.opus
+2026-06-13T12:16:40 update: added uncategorized/only my railgun.opus
+2026-06-13T12:16:40 update: added uncategorized/miComet Sugar Rush.opus
+2026-06-13T12:16:40 update: added uncategorized/マシュマリー.opus
+2026-06-13T12:16:40 update: added uncategorized/審美眼／和ぬか【Music Video】.opus
+2026-06-13T12:16:40 update: added uncategorized/少女レイ.opus
+2026-06-13T12:16:52 exception: Failed to open /home/cier/.config/mpd/playlists: No such file or directory
+2026-06-13T12:17:09 exception: Failed to open /home/cier/.config/mpd/playlists: No such file or directory
+2026-06-13T12:19:05 player: played "Arknights/SilverAsh the Reignfrost EP - The Walk _ Arknights 異格シルバーアッシュ.opus"
+2026-06-13T12:19:31 player: played "Ado/Love Is War (Cover).opus"
+2026-06-13T12:20:34 player: played "Kanaria/01 Kanaria feat. 星街すいせい - レクイエム (feat. 星街すいせい).opus"
+2026-06-13T12:20:41 player: played "Deco 27/DECO-27 - ハオ feat. 初音ミク - DECO-27 128.778.opus"
+2026-06-13T12:20:48 player: played "Deco 27/シンデレラ feat. 初音ミク.opus"
+2026-06-13T12:20:51 player: played "Deco 27/DECO＊27 & ピノキオピー - デビルじゃないもん.opus"
+2026-06-13T12:21:02 player: played "Deco 27/DECO27 - ハオ.opus"
+2026-06-13T12:21:04 player: played "Deco 27/DECO＊27 - ボルテッカー.opus"
+2026-06-13T12:21:09 player: played "Deco 27/DECO＊27 - ラビットホール.opus"
+2026-06-13T12:21:27 player: played "Deco 27/DECO 27 - Vampire.opus"
+2026-06-13T12:21:29 player: played "FLCL/16. Beautiful Morning with You.opus"
+2026-06-13T12:22:41 player: played "FLCL/18. Bran-new Lovesong.opus"
+2026-06-13T12:22:50 player: played "FLCL/01. Last Dinosaur.opus"
+2026-06-13T12:23:24 player: played "FLCL/21. Little Busters.opus"
+2026-06-13T12:23:27 player: played "FLCL/02. Ride on Shooting Star.opus"
+2026-06-13T12:41:30 player: played "FLCL/05. Runner's High -FLCL Version-.opus"
+2026-06-13T12:41:32 player: played "FLCL/03. Sad Sad Kiddie.opus"
+2026-06-13T12:41:47 player: played "FLCL/17. Sleepy Head.opus"
+2026-06-13T12:41:54 player: played "FLCL/09. Stalker Goes to Babylon.opus"
+2026-06-13T12:42:03 player: played "Good Kid/Good Kid - Witches.opus"
+2026-06-13T12:42:06 player: played "HIMEHINA/01. キスキツネ.opus"
+2026-06-13T12:43:28 player: played "Holo Advent/Above Below.opus"
+2026-06-13T12:43:37 player: played "Valorant/VALORANT - one greater than you.opus"

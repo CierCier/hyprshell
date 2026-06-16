@@ -1,17 +1,30 @@
 require("hyprland.utils")
 
--- Start once at startup
+
+start_once = {
+  "hyprpm reload",
+  -- "np-applet",
+  -- "awww-daemon",
+  "/usr/lib/polkit-kde-authentication-agent-1",
+  "clipse -listen",
+  "hyprlauncher -d",
+  "noctalia" -- noctalia v5
+}
+
 on_start(function()
-    run("hyprpm reload")
-    run("nm-applet")
-    run("awww-daemon")
-    run("/usr/lib/polkit-kde-authentication-agent-1")
-    run("/usr/lib/xdg-desktop-portal-hyprland")
-    run("clipse -listen")
-    run("hyprlauncher -d")
-    run("qs -c noctalia-shell")
+	for _,cmd in ipairs(start_once) do
+		run(cmd)
+	end
 end)
 
+
+
+start_always = {
+	"nwg-look -a",
+	"hyprctl setcursor rose-pine-hyprcursor 24"
+}
 -- Always run on reload
-run("nwg-look -a")
-run("hyprctl setcursor rose-pine-hyprcursor 20")
+
+for _,cmd in ipairs(start_always) do
+	run(cmd)
+end
