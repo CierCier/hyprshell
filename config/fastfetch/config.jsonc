@@ -24,10 +24,6 @@
           "type": "title"
       },
       {
-        "type": "custom",
-        "format":  "{$2}{#1}I hate the FreeDesktop Org   "
-      },
-      {
           "key": "{$2}{#31} kernel   ",
           "type": "kernel"
       },

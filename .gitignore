@@ -1,2 +1,6 @@
 __pycache__/
 *.py[cod]
+
+config/fish/fish_variables
+*.bak.*
+*.bak

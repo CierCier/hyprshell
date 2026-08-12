@@ -40,6 +40,16 @@ hl.layer_rule({
   blur_popups = true,
 })
 
+hl.layer_rule({
+  name = "sttd",
+  match = {
+    namespace = "sttd",
+  },
+  ignore_alpha = 0.5,
+  blur = false,
+})
+
+
 
 -- Permissions
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")

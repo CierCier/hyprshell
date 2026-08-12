@@ -3,7 +3,7 @@ local colors = require("colors")
 hl.config({
     general = {
         gaps_in = 2,
-        gaps_out = 4,
+        gaps_out = 0,
         gaps_workspaces = 2,
         border_size = 2,
         col = {
@@ -29,8 +29,8 @@ hl.config({
             xray = false,
             special = false,
             new_optimizations = true,
-            size = 8,
-            passes = 3,
+            size = 4,
+            passes = 2,
             brightness = 1,
             noise = 0.01,
             contrast = 1,
@@ -40,7 +40,7 @@ hl.config({
         dim_inactive = false,
         dim_strength = 0.4,
         dim_special = 0,
-		
+
 		shadow = {
 			enabled = false
 		},

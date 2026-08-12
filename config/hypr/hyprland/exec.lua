@@ -2,10 +2,10 @@ require("hyprland.utils")
 
 
 start_once = {
-  "hyprpm reload",
+  "hyprctl plugin load /etc/hypr/plugins/csgo-vulkan-fix.so",
   -- "np-applet",
   -- "awww-daemon",
-  "/usr/lib/polkit-kde-authentication-agent-1",
+  -- "/usr/lib/polkit-kde-authentication-agent-1",
   "clipse -listen",
   "hyprlauncher -d",
   "noctalia" -- noctalia v5

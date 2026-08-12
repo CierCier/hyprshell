@@ -27,7 +27,6 @@ end
 
 if has_nvidia_gpu() then
 	hl.env("__GL_THREADED_OPTIMIZATIONS", "1")
-	hl.env("LIBVA_DRIVER_NAME", "nvidia")
 	hl.env("GBM_BACKEND", "nvidia-drm")
 	hl.env("__GL_GSYNC_ALLOWED", "0")
 	hl.env("__GL_VRR_ALLOWED", "1")

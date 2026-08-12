@@ -2,7 +2,7 @@ require("hyprland.utils")
 
 -- Variables
 local terminal = "kitty"
-local browser = "zen-browser"
+local browser = "app.zen_browser.zen"
 local screenshot = require("hyprland.screenshot")
 local filemanager = "thunar"
 local noctalia = "noctalia msg "
