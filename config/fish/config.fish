@@ -12,19 +12,26 @@ end
 
 
 
-for dir in "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.cache/.bun/bin" "$HOME/.bun/bin" "$HOME/go/bin"
+for dir in "$HOME/.local/bin" "$HOME/.cargo/bin" "$HOME/.cache/.bun/bin" "$HOME/.bun/bin" "$HOME/go/bin" "$HOME/.local/share/silver/bin"
     if test -d "$dir"
         fish_add_path "$dir"
     end
 end
 
 
-
+if command -q direnv
+	direnv hook fish | source
+end
 
 # >>> grok installer >>>
 fish_add_path $HOME/.grok/bin
 # <<< grok installer <<<
 
 
+
 # Added by Antigravity CLI installer
 set -gx PATH "/home/cier/.local/bin" $PATH
+
+# opencode
+fish_add_path /home/cier/.opencode/bin
+

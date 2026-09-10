@@ -2,7 +2,7 @@ require("hyprland.utils")
 
 
 start_once = {
-  "hyprctl plugin load /etc/hypr/plugins/csgo-vulkan-fix.so",
+  -- "hyprctl plugin load /etc/hypr/plugins/csgo-vulkan-fix.so" -- disabled: upstream Hyprland API break,
   -- "np-applet",
   -- "awww-daemon",
   -- "/usr/lib/polkit-kde-authentication-agent-1",

@@ -22,6 +22,7 @@ hl.monitor({
 	mirror = "eDP-1"
 })
 
+
 hl.config({
 	cursor = {
 		no_hardware_cursors = false
