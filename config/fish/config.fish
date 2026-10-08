@@ -35,3 +35,11 @@ set -gx PATH "/home/cier/.local/bin" $PATH
 # opencode
 fish_add_path /home/cier/.opencode/bin
 
+# >>> kache test runner >>>
+if test -z "$CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER"; set -gx CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER 'kache test-runner'; else; set -gx CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER $CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUNNER; end
+# <<< kache test runner <<<
+# >>> kache compiler cache >>>
+if test "$PATH[1]" != '/home/cier/.local/lib/kache/shims'
+    set -gx PATH '/home/cier/.local/lib/kache/shims' $PATH
+end
+# <<< kache compiler cache <<<
