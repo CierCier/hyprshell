@@ -11,18 +11,25 @@ local launcher = "hyprlauncher"
 local settings = noctalia .. "panel-toggle control-center"
 local musicplayer = "kitty --class rmpc -e rmpc"
 local clipboard = "kitty --class clipse -e clipse"
+local nc = "qs ipc call nonchalant run "
 
 
 -- Basic binds
 bindm("Q", disp.window.close())
-bindm_run("L", "hyprlock")
-bindm_run("Escape", powermenu)
+bindm_run("L", "~/.config/quickshell/cli.sh lock") -- nonchalant lockscreen (testing; was hyprlock)
+bindm_run("Escape", nc .. "power") -- nonchalant power menu (testing; was noctalia session)
 bindm_run("SHIFT + R", "hyprctl reload")
 
 bindm_run("M", musicplayer)
 bindm_run("I", settings)
-bind_run("ALT + Space", launcher)
+bind_run("ALT + Space", nc .. "launcher") -- nonchalant launcher (testing; was hyprlauncher)
 bindm_run("V", clipboard)
+
+-- Nonchalant shell (testing)
+bindm_run("Space", nc .. "launcher")
+bindm_run("T", nc .. "dashboard")
+bindm_run("SHIFT + W", nc .. "wallpapers")
+bindm_run("SHIFT + I", nc .. "settings")
 
 -- Focus
 bindm("Left", focus("left"))

@@ -4,35 +4,36 @@
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono NFM", "Roboto", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     min-height: 0;
 }
 
 window#waybar {
     background-color: @surface;
     color: @on_surface;
-    border-bottom: 1px solid @outline_variant;
+    border: 1px solid @outline_variant;
+    border-radius: 10px;
 }
 
 /* Modules container */
 .modules-left,
 .modules-center,
 .modules-right {
-    padding: 0 4px;
+    padding: 0 6px;
 }
 
 /* Left side: Workspaces */
 #workspaces {
     background-color: transparent;
-    padding: 2px 8px;
+    padding: 2px 6px;
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 9px;
     color: @on_surface_variant;
-    border-radius: 12px;
-    margin: 2px 2px;
+    border-radius: 8px;
+    margin: 3px 1px;
     transition: all 0.2s ease-in-out;
 }
 
@@ -44,7 +45,7 @@ window#waybar {
 #workspaces button.active {
     background-color: @primary_container;
     color: @on_primary_container;
-    min-width: 32px;
+    min-width: 28px;
 }
 
 #workspaces button.urgent {
@@ -55,24 +56,34 @@ window#waybar {
 /* Center: Clock */
 #clock {
     color: @on_surface;
-    padding: 0 14px;
+    padding: 0 16px;
+    font-weight: 600;
 }
 
 /* Right side: Control Center */
 #tray,
 #network,
+#pulseaudio,
 #battery,
 #backlight,
 #custom-power {
     color: @on_surface;
-    padding: 0 12px;
-    margin: 4px 0;
-    border-radius: 12px;
+    padding: 0 9px;
+    margin: 5px 0;
+    border-radius: 8px;
 }
 
 /* Specific module highlights */
 #network {
     color: @secondary;
+}
+
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    color: @on_surface_variant;
 }
 
 #battery {
@@ -94,7 +105,7 @@ window#waybar {
 
 #custom-power {
     color: @error;
-    padding-right: 16px;
+    padding-right: 10px;
 }
 
 #tray {

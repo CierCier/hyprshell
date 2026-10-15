@@ -64,3 +64,9 @@ hl.layer_rule({
 -- Permissions
 hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 hl.permission("/usr/bin/obs", "screencopy", "allow")
+
+hl.layer_rule({
+  name = "nonchalant",
+  match = { namespace = "^nonchalant.*" },
+  blur = false,
+})
