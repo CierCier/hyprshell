@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for dependency in grimblast indra-ocr wl-copy; do
+    if ! command -v "$dependency" >/dev/null 2>&1; then
+        notify-send "OCR unavailable" "$dependency is required. Rebuild NixOS with the OCR module."
+        exit 1
+    fi
+done
+
+tmpdir=$(mktemp -d)
+trap 'rm -rf -- "$tmpdir"' EXIT
+
+if ! grimblast save area "$tmpdir/capture.png"; then
+    exit 0
+fi
+
+# Indra downloads its model files into the Hugging Face hub cache on first use.
+# Only mention that download while the cache is actually missing a model file.
+hub_cache="${HF_HUB_CACHE:-${HF_HOME:-$HOME/.cache/huggingface}/hub}"
+message="Reading selection."
+for file in det.onnx rec.onnx order.onnx meta.json; do
+    if ! compgen -G "$hub_cache/models--datalab-to--indra-ocr/snapshots/*/$file" >/dev/null; then
+        message="Reading selection. Models download on first use."
+        break
+    fi
+done
+notify-send "OCR" "$message"
+# The warm daemon service (NixOS ocr module) answers without loading the
+# models; when it is not running or unreachable, the one-shot CLI still reads
+# the selection.
+if ! command -v ocr-daemon >/dev/null 2>&1 \
+    || ! ocr-daemon --request "$tmpdir/capture.png" > "$tmpdir/text"; then
+    if ! indra-ocr "$tmpdir/capture.png" --format text --mode ocr --cores 4 > "$tmpdir/text"; then
+        notify-send "OCR failed" "Indra could not read the selection. Check the Hugging Face cache or connection."
+        exit 1
+    fi
+fi
+
+if ! grep -q '[^[:space:]]' "$tmpdir/text"; then
+    notify-send "OCR" "No text found in selection."
+    exit 0
+fi
+
+if ! wl-copy --type text/plain < "$tmpdir/text"; then
+    notify-send "OCR failed" "Could not copy text to the clipboard."
+    exit 1
+fi
+notify-send "Screenshot" "OCR copied to clipboard"

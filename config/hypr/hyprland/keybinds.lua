@@ -27,7 +27,7 @@ bindm_run("V", clipboard)
 
 -- Nonchalant shell (testing)
 bindm_run("Space", nc .. "launcher")
-bindm_run("T", nc .. "dashboard")
+bindm_run("SHIFT + T", nc .. "dashboard")
 bindm_run("SHIFT + W", nc .. "wallpapers")
 bindm_run("SHIFT + I", nc .. "settings")
 
@@ -83,7 +83,7 @@ bindm_run("SHIFT + S", screenshot.area)
 bindm_run("S", "grimblast copy area")
 bindm_run("Print", screenshot.screen)
 bindm_run("SHIFT + E", screenshot.edit)
-bindm_run("SHIFT + T", screenshot.ocr)
+bindm_run("T", screenshot.ocr)
 bindm_run("C", "hyprpicker -a")
 
 -- Workspaces

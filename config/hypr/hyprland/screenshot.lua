@@ -22,15 +22,11 @@ local function edit_cmd()
     return "TMP=\"/tmp/$(whoami)-snip.png\"; grimblast save area \"$TMP\" && (command -v swappy >/dev/null && swappy -f \"$TMP\" || notify-send \"Error\" \"swappy is required for edit mode\"); rm \"$TMP\""
 end
 
-local function ocr_cmd()
-    return "TMP=\"/tmp/$(whoami)-snip.png\"; grimblast save area \"$TMP\" && (command -v tesseract >/dev/null && tesseract -l eng \"$TMP\" - | wl-copy && notify-send \"Screenshot\" \"OCR copied to clipboard\" || notify-send \"Error\" \"tesseract is required for OCR mode\"); rm \"$TMP\""
-end
-
 local modes = {
     area   = check_grim .. save_and_notify("area"),
     screen = check_grim .. save_and_notify("screen"),
     edit   = check_grim .. edit_cmd(),
-    ocr    = check_grim .. ocr_cmd(),
+    ocr    = "~/.config/hypr/scripts/ocr",
 }
 
 for name, cmd in pairs(modes) do
