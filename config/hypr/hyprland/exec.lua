@@ -8,8 +8,7 @@ start_once = {
   -- "/usr/lib/polkit-kde-authentication-agent-1",
   "clipse -listen",
   "hyprlauncher -d",
-  -- "noctalia" -- disabled while testing nonchalant (double bar/notifications)
-  "qs",
+  "noctalia" -- disabled while testing nonchalant (double bar/notifications)
 }
 
 on_start(function()
